@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    ;
+
     TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         start.setOnClickListener(new View.OnClickListener() {
 
-
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, QuestionActivity.class);
+                startActivity(intent);
             }
         });
 
