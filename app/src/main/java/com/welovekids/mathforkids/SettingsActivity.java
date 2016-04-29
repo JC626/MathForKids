@@ -1,8 +1,8 @@
 package com.welovekids.mathforkids;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -26,7 +26,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         basic = (Switch) findViewById(R.id.basic);
@@ -98,12 +98,6 @@ public class SettingsActivity extends AppCompatActivity {
 
             }
         });
-
-    }
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivityForResult(myIntent, 0);
-        return true;
 
     }
 }
