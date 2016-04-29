@@ -1,5 +1,6 @@
 package com.welovekids.mathforkids;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -19,6 +20,8 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        Controller.resetFields();
 
         if(question == null){
             final TextView questionText = (TextView)findViewById(R.id.question);
@@ -40,7 +43,6 @@ public class QuestionActivity extends AppCompatActivity {
 
                CharSequence backspaced = text.subSequence(0,text.length()-1);
                 answer.setText(backspaced);
-                answer.setTextSize(20);
             }
         });
 
@@ -69,7 +71,7 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 boolean ans=Controller.solve(answer.getText().toString());
-                ImageView solved = (ImageView) findViewById(R.id.solved);
+                final ImageView solved = (ImageView) findViewById(R.id.solved);
                 // To fix
 
                 if(ans== true){
@@ -78,6 +80,13 @@ public class QuestionActivity extends AppCompatActivity {
                 else{
                    solved.setImageResource(R.drawable.wrong);
                 }
+                solved.setVisibility(View.VISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        solved.setVisibility(View.GONE);
+                    }
+                }, 750);
                 final TextView questionText = (TextView) findViewById(R.id.question);
                 String questionInput = Controller.askQuestion();  //Get question
                 questionText.setText(questionInput);
