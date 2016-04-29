@@ -11,7 +11,9 @@ import com.welovekids.util.Controller;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private TextView switchStatus;
+    private static boolean basicB;
+    private static boolean intermediateB;
+    private static boolean advancedB;
     private Switch basic;
     private Switch intermediate;
     private Switch advanced;
@@ -40,6 +42,7 @@ public class SettingsActivity extends AppCompatActivity {
                     basic.setChecked(true);
                     intermediate.setChecked(false);
                     advanced.setChecked(false);
+                    Controller.setRange(1);
                 }
 
             }
