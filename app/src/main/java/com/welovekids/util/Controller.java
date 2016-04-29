@@ -28,16 +28,20 @@ public class Controller {
         range++;
     }
 
+    public static void decreaseDifficulty(){
+        range--;
+    }
+
     public static String askQuestion() {
         currentQuestion = currentState.getQuestion();
         return currentQuestion.getQuestion();
     }
 
-    public String getCorrect() {
+    public static String getCorrect() {
         return String.valueOf(totalCorrect);
     }
 
-    public String getTotalIncorrect() {
+    public static String getTotalIncorrect() {
         return String.valueOf(totalIncorrect);
     }
 
