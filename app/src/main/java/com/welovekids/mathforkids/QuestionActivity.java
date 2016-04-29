@@ -2,26 +2,36 @@ package com.welovekids.mathforkids;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import com.welovekids.util.Controller;
+import com.welovekids.util.Question;
 
 public class QuestionActivity extends AppCompatActivity {
-
-
-
-
+    Question question;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
+        if(question == null){
+            final TextView questionText = (TextView)findViewById(R.id.question);
+            //Get question
+        }
+
         final EditText answer=(EditText)findViewById(R.id.user_answer);
+        answer.setKeyListener(null);
         Button backspace=getSpace();
         backspace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+               Editable text = answer.getText();
+               CharSequence backspaced = text.subSequence(0,text.length()-1);
+                answer.setText(backspaced);
             }
         });
 
