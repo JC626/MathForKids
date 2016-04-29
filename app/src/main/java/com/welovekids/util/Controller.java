@@ -1,22 +1,89 @@
 package com.welovekids.util;
 
+import com.welovekids.states.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by chris on 30/04/2016.
  */
 public class Controller {
-    private static final char[] OPERATORS = "+-/x".toCharArray();
+    private static State[] QUESTIONS = new State[]
+            {new Add(), new Sub(), new AddSub(), new Multiply(),
+                    new SubMult(), new Division(), new MultDiv(), new AddSubMult(),
+                    new SubMultDiv(), new AddSubMultDiv()};
+
+    private static int progress = 0;
+    private static int totalCorrect = 0;
+    private static int totalIncorrect = 0;
 
     public static double max = 9;
     public static int range = 1;
 
-    public static void increaseDifficulty(){
+    private static State currentState = QUESTIONS[progress];
+    private static Question currentQuestion = currentState.getQuestion();
+
+    public static void increaseDifficulty() {
         range++;
     }
 
+    public static String askQuestion() {
+        currentQuestion = currentState.getQuestion();
+        return currentQuestion.getQuestion();
+    }
 
+    public String getCorrect() {
+        return String.valueOf(totalCorrect);
+    }
 
-    /** Executes the arithmetic operation on the two digits passed */
-    public static int getAnswer(int digit1, int digit2, char operator){
+    public String getTotalIncorrect() {
+        return String.valueOf(totalIncorrect);
+    }
+
+    public static boolean solve(String solution) {
+        if (solution.equals(currentQuestion.getAnswer())) {
+            totalCorrect++;
+            currentState.setCorrectAnswered(currentState.getCorrectAnswered() + 1);
+            if (currentState.getCorrectAnswered() == 5) {
+                currentState.setIncorrectlyAnswered(0);
+                progress++;
+                if (progress == QUESTIONS.length) {
+                    progress = QUESTIONS.length - 1;
+                }
+                currentState = QUESTIONS[progress];
+                currentQuestion = currentState.getQuestion();
+            } else {
+                currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() - 1);
+                currentQuestion = currentState.getQuestion();
+            }
+            return true;
+        } else {
+            totalIncorrect--;
+            if (totalIncorrect < 0) {
+                totalIncorrect = 0;
+            }
+            currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() + 1);
+            if (currentState.getIncorrectlyAnswered() == 5) {
+                currentState.setCorrectAnswered(0);
+                progress--;
+                if (progress < 0) {
+                    progress = 0;
+                }
+                currentState = QUESTIONS[progress];
+                currentQuestion = currentState.getQuestion();
+            } else {
+                currentState.setCorrectAnswered(currentState.getCorrectAnswered() - 1);
+                currentQuestion = currentState.getQuestion();
+            }
+            return false;
+        }
+    }
+
+    /**
+     * Executes the arithmetic operation on the two digits passed
+     */
+    public static int getAnswer(int digit1, int digit2, char operator) {
         switch (operator) {
             case '+':
                 return digit1 + digit2;
@@ -27,7 +94,7 @@ public class Controller {
             case 'x':
                 return digit1 * digit2;
         }
-        return 1+1; //dummy return value to compile...
+        return 1 + 1; //dummy return value to compile...
     }
 
 }
