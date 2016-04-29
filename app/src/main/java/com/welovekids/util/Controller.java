@@ -74,10 +74,7 @@ public class Controller {
             }
             return true;
         } else {
-            totalIncorrect--;
-            if (totalIncorrect < 0) {
-                totalIncorrect = 0;
-            }
+            totalIncorrect++;
             currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() + 1);
             if (currentState.getIncorrectlyAnswered() == 5) {
                 currentState.setCorrectAnswered(0);
