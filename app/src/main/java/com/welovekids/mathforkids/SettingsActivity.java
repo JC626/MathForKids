@@ -7,6 +7,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.welovekids.util.Controller;
+
 public class SettingsActivity extends AppCompatActivity {
 
     private TextView switchStatus;
@@ -52,6 +54,7 @@ public class SettingsActivity extends AppCompatActivity {
                     basic.setChecked(false);
                     intermediate.setChecked(true);
                     advanced.setChecked(false);
+                    Controller.setRange(2);
                 }
 
             }
@@ -66,6 +69,7 @@ public class SettingsActivity extends AppCompatActivity {
                     basic.setChecked(false);
                     intermediate.setChecked(false);
                     advanced.setChecked(true);
+                    Controller.setRange(3);
                 }
 
             }
