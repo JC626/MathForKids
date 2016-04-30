@@ -11,7 +11,8 @@ public class Score extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
-        TextView totalCorrect = (TextView)findViewById(R.id.totalCorrect);
-        TextView totalWrong = (TextView)findViewById(R.id.totalWrong);
-        TextView totalQuestions = (TextView)findViewById(R.id.totalQuestions);
+        TextView totalCorrect = (TextView) findViewById(R.id.totalCorrect);
+        TextView totalWrong = (TextView) findViewById(R.id.totalWrong);
+        TextView totalQuestions = (TextView) findViewById(R.id.totalQuestions);
+    }
 }
