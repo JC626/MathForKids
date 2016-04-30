@@ -115,7 +115,7 @@ public class Controller {
             case '-':
                 return digit1 - digit2;
             case '/':
-                return digit1 / digit2;
+                return Math.round(digit1 / digit2);
             case 'x':
                 return digit1 * digit2;
         }
