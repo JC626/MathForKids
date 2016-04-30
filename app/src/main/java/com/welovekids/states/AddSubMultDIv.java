@@ -40,8 +40,6 @@ public class AddSubMultDiv implements State {
                 return 'x';
             case 3:
                 return '/';
-
-
         }
         return ' ';
     }
