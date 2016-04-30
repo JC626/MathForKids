@@ -1,6 +1,7 @@
 package com.welovekids.mathforkids;
 
 import android.content.SharedPreferences;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
@@ -88,9 +89,8 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 boolean ans=Controller.solve(answer.getText().toString());
                 final ImageView solved = (ImageView) findViewById(R.id.solved);
-                // To fix
 
-                if(ans== true){
+                if(ans){
                   solved.setImageResource(R.drawable.right);
                 }
                 else{
@@ -201,7 +201,26 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
+        //Timer
+       /* final TextView timer = getTimer();
+
+        new CountDownTimer(60000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+               timer.setText("Seconds Left: " + millisUntilFinished / 1000);
+                //here you can have your logic to set text to edittext
+            }
+
+            public void onFinish() {
+                timer.setText("Done!");
+            }
+
+        }.start();*/
     }
+
+   /* public TextView getTimer(){
+        return (TextView) findViewById(R.id.timer);
+    }*/
 
     public Button getButton0(){
         return (Button)findViewById(R.id.Button0);

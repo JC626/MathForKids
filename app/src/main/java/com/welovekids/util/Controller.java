@@ -27,18 +27,18 @@ public class Controller {
     private static State currentState = QUESTIONS[progress];
     private static Question currentQuestion = currentState.getQuestion();
 
-    public static void resetFields() {
+    public static void resetFields(){
         progress = 0;
         totalCorrect = 0;
         totalIncorrect = 0;
         totalQuestions = 0;
     }
 
-    public static int getHighScore() {
+    public static int getHighScore(){
         return highScore;
     }
 
-    public static void setHighScore(int h) {
+    public static void setHighScore(int h){
         highScore = h;
     }
 
@@ -69,56 +69,53 @@ public class Controller {
      * This means that it would repeatedly ask the same questions n number of times.
      * Once the user answers the type of question n number of times, it will move on
      * to new set of questions.
-     * <p>
+     * <p/>
      * If the user answers incorrectly, the number of correctly answered decreases.
      *
      * @param solution User input
      * @return true if the user entered correct
      */
     public static boolean solve(String solution) {
+        totalQuestions++;
         String answer = currentQuestion.getAnswer();
-        try {
-            double theAnswer = Double.parseDouble(answer);
-            double theSolution = Double.parseDouble(solution);
-            totalQuestions++;
-            if (theAnswer == theSolution) {
-                totalCorrect++;
-                currentState.setCorrectAnswered(currentState.getCorrectAnswered() + 1);
-                // If user answered 5 correct answers, go to the next state
-                if (currentState.getCorrectAnswered() == 5) {
-                    currentState.setCorrectAnswered(0);
-                    currentState.setIncorrectlyAnswered(0);
-                    progress++;
-                    if (progress == QUESTIONS.length) {
-                        progress = QUESTIONS.length - 1;
-                    }
-                    currentState = QUESTIONS[progress];
-                    currentQuestion = currentState.getQuestion();
-                } else {
-                    // Just generate a new question
-                    currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() - 1);
-                    currentQuestion = currentState.getQuestion();
+        double theAnswer = Double.parseDouble(answer);
+        double theSolution = Double.parseDouble(solution);
+        /*if (solution.equals(currentQuestion.getAnswer())) {*/
+        if(theAnswer == theSolution){
+            totalCorrect++;
+            currentState.setCorrectAnswered(currentState.getCorrectAnswered() + 1);
+            // If user answered 5 correct answers, go to the next state
+            if (currentState.getCorrectAnswered() == 5) {
+                currentState.setCorrectAnswered(0);
+                currentState.setIncorrectlyAnswered(0);
+                progress++;
+                if (progress == QUESTIONS.length) {
+                    progress = QUESTIONS.length - 1;
                 }
-                return true;
+                currentState = QUESTIONS[progress];
+                currentQuestion = currentState.getQuestion();
             } else {
-                totalIncorrect++;
-                currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() + 1);
-                if (currentState.getIncorrectlyAnswered() == 5) {
-                    currentState.setCorrectAnswered(0);
-                    currentState.setIncorrectlyAnswered(0);
-                    progress--;
-                    if (progress < 0) {
-                        progress = 0;
-                    }
-                    currentState = QUESTIONS[progress];
-                    currentQuestion = currentState.getQuestion();
-                } else {
-                    currentState.setCorrectAnswered(currentState.getCorrectAnswered() - 1);
-                    currentQuestion = currentState.getQuestion();
-                }
-                return false;
+                // Just generate a new question
+                currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() - 1);
+                currentQuestion = currentState.getQuestion();
             }
-        } catch (Exception e) {
+            return true;
+        } else {
+            totalIncorrect++;
+            currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() + 1);
+            if (currentState.getIncorrectlyAnswered() == 5) {
+                currentState.setCorrectAnswered(0);
+                currentState.setIncorrectlyAnswered(0);
+                progress--;
+                if (progress < 0) {
+                    progress = 0;
+                }
+                currentState = QUESTIONS[progress];
+                currentQuestion = currentState.getQuestion();
+            } else {
+                currentState.setCorrectAnswered(currentState.getCorrectAnswered() - 1);
+                currentQuestion = currentState.getQuestion();
+            }
             return false;
         }
     }
@@ -133,7 +130,7 @@ public class Controller {
             case '-':
                 return digit1 - digit2;
             case '/':
-                return digit1 / (double) digit2;
+                return digit1 / digit2;
             case 'x':
                 return digit1 * digit2;
         }
