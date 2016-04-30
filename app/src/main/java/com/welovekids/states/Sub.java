@@ -24,7 +24,7 @@ public class Sub implements State {
 
     }
     public int getCorrectAnswered(){
-        return correct++;
+        return correct;
 
 
     }
@@ -35,7 +35,7 @@ public class Sub implements State {
     }
 
     public int getIncorrectlyAnswered(){
-        return incorrect--;
+        return incorrect;
 
 
     }

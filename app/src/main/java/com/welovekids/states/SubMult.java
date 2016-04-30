@@ -21,7 +21,7 @@ public class SubMult implements State {
 
 
     }
-    public int getCorrectAnswered(){return correct++;}
+    public int getCorrectAnswered(){return correct;}
 
     @Override
     public char getOperator() {
@@ -30,7 +30,7 @@ public class SubMult implements State {
         else {return 'x';}
     }
 
-    public int getIncorrectlyAnswered(){return incorrect--;}
+    public int getIncorrectlyAnswered(){return incorrect;}
 
     public String getAnswer(Question g){return g.getAnswer();}
     public void setCorrectAnswered(int correct){this.correct=correct;}
