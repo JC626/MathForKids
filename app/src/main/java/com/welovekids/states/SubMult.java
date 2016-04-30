@@ -8,8 +8,6 @@ import com.welovekids.util.QuestionImpl;
  * Created by dean on 30/04/16.
  */
 public class SubMult implements State {
-
-
     private int correct;
     private int incorrect;
 
