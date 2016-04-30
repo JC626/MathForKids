@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.welovekids.util.Controller;
@@ -13,7 +14,6 @@ import com.welovekids.util.Question;
 
 public class QuestionActivity extends AppCompatActivity {
     Question question;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,18 +27,20 @@ public class QuestionActivity extends AppCompatActivity {
         }
 
         final EditText answer=(EditText)findViewById(R.id.user_answer);
-       boolean ans=Controller.solve(answer.getText().toString());
-        if(ans== true){}
-
-        else{}
         answer.setKeyListener(null);
         Button backspace=getSpace();
         backspace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                Editable text = answer.getText();
+                if(text.length()== 0){
+                    return;
+                }
+
                CharSequence backspaced = text.subSequence(0,text.length()-1);
                 answer.setText(backspaced);
+                answer.setTextSize(20);
             }
         });
 
@@ -66,10 +68,31 @@ public class QuestionActivity extends AppCompatActivity {
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean ans=Controller.solve(answer.getText().toString());
+                ImageView solved = (ImageView) findViewById(R.id.solved);
+                // To fix
+
+                if(ans== true){
+                  solved.setImageResource(R.drawable.right);
+                }
+                else{
+                   solved.setImageResource(R.drawable.wrong);
+                }
+                final TextView questionText = (TextView) findViewById(R.id.question);
+                String questionInput = Controller.askQuestion();  //Get question
+                questionText.setText(questionInput);
+                answer.setText("");
 
             }
         });
 
+        Button negative=getNegative();
+        negative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                answer.append("-");
+            }
+        });
 
         Button b0=getButton0();
         b0.setOnClickListener(new View.OnClickListener() {
@@ -193,12 +216,14 @@ public class QuestionActivity extends AppCompatActivity {
     }
     public Button getButton9(){
         return (Button)findViewById(R.id.Button9);
-
     }
+
+    public Button getNegative(){
+        return (Button)findViewById(R.id.ButtonNegative);
+    }
+
     public Button getSpace(){
         return (Button)findViewById(R.id.ButtonBackSpace);
-
-
     }
     public Button getClear(){
 
@@ -213,9 +238,6 @@ public class QuestionActivity extends AppCompatActivity {
 
         return (Button)findViewById(R.id.ButtonEnter);
     }
-
-
-
 
 
 }
