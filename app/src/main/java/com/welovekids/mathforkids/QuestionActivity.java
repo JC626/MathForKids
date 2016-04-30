@@ -15,36 +15,4 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_question);
 
     }
-
-    public String getTotalString() {
-        return "" + currentResult;
-    }
-
-    public void setTotal(String n) {
-        currentResult = convertToNumber(n);
-    }
-
-    public void add(String n) {
-        currentResult += convertToNumber(n);
-    }
-
-    public void subtract(String n) {
-        currentResult -= convertToNumber(n);
-    }
-
-    public void multiply(String n) {
-        currentResult *= convertToNumber(n);
-    }
-
-    public void divide(String n) {
-        currentResult /= convertToNumber(n);
-    }
-
-    private int convertToNumber(String n) {
-        return Integer.parseInt(n);
-    }
-
-
-
-
 }
