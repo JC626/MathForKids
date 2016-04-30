@@ -28,6 +28,10 @@ public class Controller {
         range++;
     }
 
+    public static void decreaseDifficulty(){
+        range--;
+    }
+
     public static String askQuestion() {
         currentQuestion = currentState.getQuestion();
         return currentQuestion.getQuestion();
