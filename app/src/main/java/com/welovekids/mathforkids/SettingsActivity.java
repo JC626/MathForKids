@@ -17,7 +17,7 @@ import com.welovekids.util.Controller;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private static boolean basicB = false;
+    private static boolean basicB = true;
     private static boolean intermediateB = false;
     private static boolean advancedB = false;
     private static boolean muted = false;
