@@ -26,7 +26,7 @@ public class Add implements State {
 
     @Override
     public int getCorrectAnswered() {
-        return correct++;
+        return correct;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Add implements State {
 
     @Override
     public int getIncorrectlyAnswered() {
-        return incorrect--;
+        return incorrect;
     }
 
     @Override
@@ -56,6 +56,6 @@ public class Add implements State {
 
     @Override
     public double generateRandomNumber() {
-        return (1 * Controller.range) + Math.random() * ((Math.random() * Controller.max) * Controller.range);
+        return (1 * (10* (Controller.range-1))) + Math.random() * ((Math.random() * Controller.max) * (10*Controller.range));
     }
 }

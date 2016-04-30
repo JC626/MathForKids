@@ -51,6 +51,6 @@ public class Sub implements State {
     }
 
     public double generateRandomNumber() {
-        return (1 * Controller.range) + Math.random() * ((Math.random() * Controller.max) * Controller.range);
+        return (1 * (10* (Controller.range-1))) + Math.random() * ((Math.random() * Controller.max) * (10*Controller.range));
     }
 }
