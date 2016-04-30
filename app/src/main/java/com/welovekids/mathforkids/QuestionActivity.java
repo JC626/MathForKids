@@ -1,6 +1,7 @@
 package com.welovekids.mathforkids;
 
 
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
@@ -228,6 +229,8 @@ public class QuestionActivity extends AppCompatActivity {
 
             public void onFinish() {
                 //Change to game over screen
+                Intent intent = new Intent(QuestionActivity.this, GameOverActivity.class);
+                startActivity(intent);
             }
 
         }.start();
