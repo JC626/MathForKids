@@ -42,7 +42,6 @@ public class Controller {
     }
 
     public static String askQuestion() {
-        totalQuestions++;
         currentQuestion = currentState.getQuestion();
         return currentQuestion.getQuestion();
     }
@@ -68,7 +67,12 @@ public class Controller {
      * @return true if the user entered correct
      */
     public static boolean solve(String solution) {
-        if (solution.equals(currentQuestion.getAnswer())) {
+        totalQuestions++;
+        String answer = currentQuestion.getAnswer();
+        double theAnswer = Double.parseDouble(answer);
+        double theSolution = Double.parseDouble(solution);
+        /*if (solution.equals(currentQuestion.getAnswer())) {*/
+        if(theAnswer == theSolution){
             totalCorrect++;
             currentState.setCorrectAnswered(currentState.getCorrectAnswered() + 1);
             // If user answered 5 correct answers, go to the next state
@@ -110,7 +114,7 @@ public class Controller {
     /**
      * Executes the arithmetic operation on the two digits passed
      */
-    public static double getAnswer(int digit1, int digit2, char operator) {
+    public static double getAnswer(double digit1, double digit2, char operator) {
         switch (operator) {
             case '+':
                 return digit1 + digit2;

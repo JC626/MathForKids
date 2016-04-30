@@ -29,12 +29,15 @@ public class Division implements State {
         double answer = Controller.getAnswer(digit1, digit2, operator);
         int check = (int)answer;
         double checkAnswer = answer - check;
+        System.out.println("CheckAnswer: " + checkAnswer);
+        System.out.println("Answer: " + answer);
+
         if(checkAnswer == 0){
             return new QuestionImpl("" + digit1 + operator + digit2,
                     String.valueOf((int)answer), String.valueOf(operator));
         }
         return new QuestionImpl("" + digit1 + operator + digit2,
-                String.valueOf(answer), String.valueOf(operator));
+                String.format("%.2f", answer), String.valueOf(operator));
     }
 
     @Override

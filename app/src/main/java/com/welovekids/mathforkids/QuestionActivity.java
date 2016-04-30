@@ -75,7 +75,7 @@ public class QuestionActivity extends AppCompatActivity {
                 boolean ans=Controller.solve(answer.getText().toString());
                 final ImageView solved = (ImageView) findViewById(R.id.solved);
 
-                if(ans== true){
+                if(ans){
                   solved.setImageResource(R.drawable.right);
                 }
                 else{
@@ -186,8 +186,8 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-
-        final TextView timer = getTimer();
+        //Timer
+       /* final TextView timer = getTimer();
 
         new CountDownTimer(60000, 1000) {
 
@@ -200,12 +200,12 @@ public class QuestionActivity extends AppCompatActivity {
                 timer.setText("Done!");
             }
 
-        }.start();
+        }.start();*/
     }
 
-    public TextView getTimer(){
+   /* public TextView getTimer(){
         return (TextView) findViewById(R.id.timer);
-    }
+    }*/
 
     public Button getButton0(){
         return (Button)findViewById(R.id.Button0);
