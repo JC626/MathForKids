@@ -1,3 +1,7 @@
+/* File: Controller.java
+ * Date             Author          Changes
+ * 30 Mar 16        Chris Rabe      added documentation
+ */
 package com.welovekids.util;
 
 import com.welovekids.states.*;
@@ -22,11 +26,11 @@ public class Controller {
     private static State currentState = QUESTIONS[progress];
     private static Question currentQuestion = currentState.getQuestion();
 
-    public static void setRange(int range){
+    public static void setRange(int range) {
         Controller.range = range;
     }
 
-    public static int getTotalQuestions(){
+    public static int getTotalQuestions() {
         return totalQuestions;
     }
 
@@ -50,7 +54,7 @@ public class Controller {
      * This means that it would repeatedly ask the same questions n number of times.
      * Once the user answers the type of question n number of times, it will move on
      * to new set of questions.
-     *
+     * <p/>
      * If the user answers incorrectly, the number of correctly answered decreases.
      *
      * @param solution User input
@@ -60,6 +64,7 @@ public class Controller {
         if (solution.equals(currentQuestion.getAnswer())) {
             totalCorrect++;
             currentState.setCorrectAnswered(currentState.getCorrectAnswered() + 1);
+            // If user answered 5 correct answers, go to the next state
             if (currentState.getCorrectAnswered() == 5) {
                 currentState.setIncorrectlyAnswered(0);
                 progress++;
@@ -69,6 +74,7 @@ public class Controller {
                 currentState = QUESTIONS[progress];
                 currentQuestion = currentState.getQuestion();
             } else {
+                // Just generate a new question
                 currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() - 1);
                 currentQuestion = currentState.getQuestion();
             }
