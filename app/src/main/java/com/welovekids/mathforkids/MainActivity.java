@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
         acheive.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, AchievementActivity.class);
+                startActivity(intent);
             }
         });
 
