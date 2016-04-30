@@ -8,8 +8,6 @@ import com.welovekids.util.QuestionImpl;
  * Created by dean on 30/04/16.
  */
 public class SubMult implements State {
-
-
     private int correct;
     private int incorrect;
 
@@ -23,7 +21,7 @@ public class SubMult implements State {
 
 
     }
-    public int getCorrectAnswered(){return correct++;}
+    public int getCorrectAnswered(){return correct;}
 
     @Override
     public char getOperator() {
@@ -32,7 +30,7 @@ public class SubMult implements State {
         else {return 'x';}
     }
 
-    public int getIncorrectlyAnswered(){return incorrect--;}
+    public int getIncorrectlyAnswered(){return incorrect;}
 
     public String getAnswer(Question g){return g.getAnswer();}
     public void setCorrectAnswered(int correct){this.correct=correct;}
