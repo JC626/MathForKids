@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         // Retrieve high score
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
         Controller.setHighScore(pref.getInt("Highscore", Controller.getHighScore()));
-        Controller.setOverallQuestions(pref.getInt("TotalQues", 0));
 
         // Create buttons and add action listeners
         Button score = (Button) findViewById(R.id.score);
