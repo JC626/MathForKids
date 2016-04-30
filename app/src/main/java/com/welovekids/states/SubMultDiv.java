@@ -34,7 +34,7 @@ public class SubMultDiv implements State {
                     String.valueOf((int) answer), String.valueOf(operator));
         }
         return new QuestionImpl("" + digit1 + operator + digit2,
-                String.valueOf(answer), String.valueOf(operator));
+                String.format("%.2f", answer), String.valueOf(operator));
     }
 
     @Override

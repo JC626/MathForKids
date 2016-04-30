@@ -1,6 +1,8 @@
 package com.welovekids.mathforkids;
 
 import android.content.SharedPreferences;
+import android.os.CountDownTimer;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -25,9 +27,23 @@ public class QuestionActivity extends AppCompatActivity {
 
 
     @Override
+    public void onBackPressed() {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        pref
+                .edit()
+                .putInt("Highscore", Integer.valueOf(Controller.getCorrect()))
+                .putInt("TotalQues", Integer.valueOf(Controller.getTotalQuestions() + Controller.getOverallQuestions()))
+                .apply();
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        Controller.resetFields();
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -44,12 +60,12 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Editable text = answer.getText();
-                if (text.length() == 0) {
+               Editable text = answer.getText();
+                if(text.length()== 0){
                     return;
                 }
 
-                CharSequence backspaced = text.subSequence(0, text.length() - 1);
+               CharSequence backspaced = text.subSequence(0,text.length()-1);
                 answer.setText(backspaced);
             }
         });
@@ -198,6 +214,21 @@ public class QuestionActivity extends AppCompatActivity {
         mp.setLooping(true);
         if(!isMuted())
             mp.start();
+        //Timer
+       /* final TextView timer = getTimer();
+
+        new CountDownTimer(60000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+               timer.setText("Seconds Left: " + millisUntilFinished / 1000);
+                //here you can have your logic to set text to edittext
+            }
+
+            public void onFinish() {
+                timer.setText("Done!");
+            }
+
+        }.start();*/
     }
 
     private boolean isMuted() {
@@ -214,7 +245,9 @@ public class QuestionActivity extends AppCompatActivity {
 
     public Button getButton0(){
         return (Button)findViewById(R.id.Button0);
-
+   /* public TextView getTimer(){
+        return (TextView) findViewById(R.id.timer);
+    }*/
     }
 
     public Button getButton1(){

@@ -1,5 +1,8 @@
 package com.welovekids.mathforkids;
 
+import android.content.SharedPreferences;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -28,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Retrieve high score
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        Controller.setHighScore(pref.getInt("Highscore", Controller.getHighScore()));
+        Controller.setOverallQuestions(pref.getInt("TotalQues", 0));
 
+        // Create buttons and add action listeners
         Button score = (Button) findViewById(R.id.score);
 
         score.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
         acheive.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, AchievementActivity.class);
+                startActivity(intent);
             }
         });
 
