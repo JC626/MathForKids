@@ -31,13 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Retrieve high score
-//        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-//        Controller.setHighScore(pref.getInt("Highscore", Controller.getHighScore()));
-        SharedPreferences mPrefs = getSharedPreferences("label", 0);
-        String mString = mPrefs.getString("tag", "default_value_if_variable_not_found");
-        SharedPreferences.Editor mEditor = mPrefs.edit();
-        mEditor.putString("tag", String.valueOf(Controller.getHighScore())).commit();
+
         // Create buttons and add action listeners
         Button score = (Button) findViewById(R.id.score);
 
