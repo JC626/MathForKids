@@ -13,6 +13,8 @@ import com.welovekids.util.Question;
 
 public class QuestionActivity extends AppCompatActivity {
     Question question;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +22,15 @@ public class QuestionActivity extends AppCompatActivity {
 
         if(question == null){
             final TextView questionText = (TextView)findViewById(R.id.question);
-            //Get question
+           String questionInput=Controller.askQuestion();  //Get question
+            questionText.setText(questionInput);
         }
 
         final EditText answer=(EditText)findViewById(R.id.user_answer);
+       boolean ans=Controller.solve(answer.getText().toString());
+        if(ans== true){}
+
+        else{}
         answer.setKeyListener(null);
         Button backspace=getSpace();
         backspace.setOnClickListener(new View.OnClickListener() {
