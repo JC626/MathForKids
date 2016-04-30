@@ -25,24 +25,22 @@ public class AchievementActivity extends AppCompatActivity {
         final ImageView trophy7 = (ImageView) findViewById(R.id.trophy6);
         final ImageView trophy8 = (ImageView) findViewById(R.id.trophy6);
 
-        if (Integer.parseInt(Controller.getCorrect()) >= 1) {
+        if (Controller.getHighScore() >= 1) {
             //yellowtrophy for one Q ans
             trophy1.setImageResource(R.drawable.yellowtrophy);
-            System.out.println("it's suppose to be yellow");
-            System.out.println(Controller.getTotalQuestions());
         }else {
             trophy1.setImageResource(R.drawable.graytrophy);
         }
 
 
-        if (Integer.parseInt(Controller.getCorrect()) >= 5) {
+        if (Controller.getHighScore() >= 5) {
             //yellowtrophy for 5 Q ans
             trophy2.setImageResource(R.drawable.yellowtrophy);
 
         }else {
             trophy2.setImageResource(R.drawable.graytrophy);
         }
-        if (Integer.parseInt(Controller.getCorrect()) >= 10) {
+        if (Controller.getHighScore() >= 10) {
             //yellowtrophy for 10 Q ans
             trophy3.setImageResource(R.drawable.yellowtrophy);
         }else {
@@ -50,19 +48,19 @@ public class AchievementActivity extends AppCompatActivity {
         }
 
 
-        if (Integer.parseInt(Controller.getCorrect()) >= 20) {
+        if (Controller.getHighScore() >= 20) {
             //yellowtrophy for 20 Q ans
             trophy4.setImageResource(R.drawable.yellowtrophy);
         }else {
             trophy4.setImageResource(R.drawable.graytrophy);
         }
-        if (Integer.parseInt(Controller.getCorrect()) >= 50) {
+        if (Controller.getHighScore() >= 50) {
             //yellowtrophy for 50 Q ans
             trophy5.setImageResource(R.drawable.yellowtrophy);
         }else {
             trophy5.setImageResource(R.drawable.graytrophy);
         }
-        if (Integer.parseInt(Controller.getCorrect()) >= 100) {
+        if (Controller.getHighScore() >= 100) {
             //yellowtrophy for 100 Q ans
             trophy6.setImageResource(R.drawable.yellowtrophy);
         }else {
@@ -71,15 +69,15 @@ public class AchievementActivity extends AppCompatActivity {
 
         if (Integer.parseInt(Controller.getCorrect()) >= 50) {
             //yellowtrophy for 100 Q ans
-            trophy6.setImageResource(R.drawable.yellowtrophy);
+            trophy7.setImageResource(R.drawable.yellowtrophy);
         }else {
-            trophy6.setImageResource(R.drawable.graytrophy);
+            trophy7.setImageResource(R.drawable.graytrophy);
         }
         if (Integer.parseInt(Controller.getCorrect()) >= 100) {
             //yellowtrophy for 100 Q ans
-            trophy6.setImageResource(R.drawable.yellowtrophy);
+            trophy8.setImageResource(R.drawable.yellowtrophy);
         }else {
-            trophy6.setImageResource(R.drawable.graytrophy);
+            trophy8.setImageResource(R.drawable.graytrophy);
         }
     }
 }
