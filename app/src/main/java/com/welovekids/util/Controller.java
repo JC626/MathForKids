@@ -73,6 +73,7 @@ public class Controller {
             currentState.setCorrectAnswered(currentState.getCorrectAnswered() + 1);
             // If user answered 5 correct answers, go to the next state
             if (currentState.getCorrectAnswered() == 5) {
+                currentState.setCorrectAnswered(0);
                 currentState.setIncorrectlyAnswered(0);
                 progress++;
                 if (progress == QUESTIONS.length) {
@@ -91,6 +92,7 @@ public class Controller {
             currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() + 1);
             if (currentState.getIncorrectlyAnswered() == 5) {
                 currentState.setCorrectAnswered(0);
+                currentState.setIncorrectlyAnswered(0);
                 progress--;
                 if (progress < 0) {
                     progress = 0;
