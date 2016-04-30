@@ -1,6 +1,6 @@
 package com.welovekids.mathforkids;
 
-import android.content.SharedPreferences;
+
 import android.os.CountDownTimer;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
@@ -96,9 +96,8 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 boolean ans=Controller.solve(answer.getText().toString());
                 final ImageView solved = (ImageView) findViewById(R.id.solved);
-                // To fix
 
-                if(ans== true){
+                if(ans){
                   solved.setImageResource(R.drawable.right);
                 }
                 else{
@@ -214,8 +213,8 @@ public class QuestionActivity extends AppCompatActivity {
         mp.setLooping(true);
         if(!isMuted())
             mp.start();
-        //Timer
-       /* final TextView timer = getTimer();
+
+        final TextView timer = getTimer();
 
         new CountDownTimer(60000, 1000) {
 
@@ -225,10 +224,10 @@ public class QuestionActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
-                timer.setText("Done!");
+                //Change to game over screen
             }
 
-        }.start();*/
+        }.start();
     }
 
     private boolean isMuted() {
@@ -242,12 +241,13 @@ public class QuestionActivity extends AppCompatActivity {
         mp = null;
         super.onDestroy();
     }
+    public TextView getTimer(){
+        return (TextView) findViewById(R.id.timer);
+    }
 
     public Button getButton0(){
         return (Button)findViewById(R.id.Button0);
-   /* public TextView getTimer(){
-        return (TextView) findViewById(R.id.timer);
-    }*/
+
     }
 
     public Button getButton1(){
