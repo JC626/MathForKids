@@ -17,7 +17,7 @@ public class SubMult implements State {
         int digit1 = (int) generateRandomNumber();
         int digit2 = (int) generateRandomNumber();
         char operator = getOperator();
-        int answer = Controller.getAnswer(digit1, digit2, operator);
+        double answer = Controller.getAnswer(digit1, digit2, operator);
         return new QuestionImpl("" + digit1 + operator + digit2, String.valueOf(answer), String.valueOf(operator));
 
 
