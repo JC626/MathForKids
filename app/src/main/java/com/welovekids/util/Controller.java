@@ -73,6 +73,7 @@ public class Controller {
             currentState.setCorrectAnswered(currentState.getCorrectAnswered() + 1);
             // If user answered 5 correct answers, go to the next state
             if (currentState.getCorrectAnswered() == 5) {
+                currentState.setCorrectAnswered(0);
                 currentState.setIncorrectlyAnswered(0);
                 progress++;
                 if (progress == QUESTIONS.length) {
@@ -91,6 +92,7 @@ public class Controller {
             currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() + 1);
             if (currentState.getIncorrectlyAnswered() == 5) {
                 currentState.setCorrectAnswered(0);
+                currentState.setIncorrectlyAnswered(0);
                 progress--;
                 if (progress < 0) {
                     progress = 0;
@@ -108,14 +110,14 @@ public class Controller {
     /**
      * Executes the arithmetic operation on the two digits passed
      */
-    public static int getAnswer(int digit1, int digit2, char operator) {
+    public static double getAnswer(int digit1, int digit2, char operator) {
         switch (operator) {
             case '+':
                 return digit1 + digit2;
             case '-':
                 return digit1 - digit2;
             case '/':
-                return Math.round(digit1 / digit2);
+                return digit1 / digit2;
             case 'x':
                 return digit1 * digit2;
         }

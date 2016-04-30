@@ -1,8 +1,11 @@
 package com.welovekids.mathforkids;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -23,6 +26,8 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         basic = (Switch) findViewById(R.id.basic);
         intermediate = (Switch) findViewById(R.id.intermediate);
@@ -31,6 +36,7 @@ public class SettingsActivity extends AppCompatActivity {
         basic.setChecked(basicB);
         intermediate.setChecked(intermediateB);
         advanced.setChecked(advancedB);
+
         //attach a listener to check for changes in state
         basic.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -92,7 +98,6 @@ public class SettingsActivity extends AppCompatActivity {
 
             }
         });
+
     }
-
-
 }
