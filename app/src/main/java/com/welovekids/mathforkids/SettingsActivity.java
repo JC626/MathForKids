@@ -16,11 +16,11 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_settings);
 
         basic = (Switch) findViewById(R.id.basic);
         intermediate = (Switch) findViewById(R.id.intermediate);
-        basic = (Switch) findViewById(R.id.advanced);
+        advanced = (Switch) findViewById(R.id.advanced);
         //set the switch to OFF
         basic.setChecked(false);
         intermediate.setChecked(false);
