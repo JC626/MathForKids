@@ -25,12 +25,8 @@ public class Controller {
     private static State currentState = QUESTIONS[progress];
     private static Question currentQuestion = currentState.getQuestion();
 
-    public static void increaseDifficulty() {
-        range++;
-    }
-
-    public static void decreaseDifficulty(){
-        range--;
+    public static void setRange(int range){
+        Controller.range = range;
     }
 
     public static int getTotalQuestions(){
