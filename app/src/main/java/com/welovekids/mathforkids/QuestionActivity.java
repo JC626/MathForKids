@@ -187,7 +187,7 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
         //Timer
-       /* final TextView timer = getTimer();
+        final TextView timer = getTimer();
 
         new CountDownTimer(60000, 1000) {
 
@@ -200,12 +200,12 @@ public class QuestionActivity extends AppCompatActivity {
                 timer.setText("Done!");
             }
 
-        }.start();*/
+        }.start();
     }
 
-   /* public TextView getTimer(){
+    public TextView getTimer(){
         return (TextView) findViewById(R.id.timer);
-    }*/
+    }
 
     public Button getButton0(){
         return (Button)findViewById(R.id.Button0);
