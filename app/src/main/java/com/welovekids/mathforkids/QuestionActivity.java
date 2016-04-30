@@ -1,7 +1,9 @@
 package com.welovekids.mathforkids;
 
+import android.content.SharedPreferences;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,9 +21,22 @@ public class QuestionActivity extends AppCompatActivity {
     Question question;
 
     @Override
+    public void onBackPressed() {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        pref
+                .edit()
+                .putInt("Highscore", Integer.valueOf(Controller.getCorrect()))
+                .apply();
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        Controller.resetFields();
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -187,7 +202,7 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
         //Timer
-        final TextView timer = getTimer();
+       /* final TextView timer = getTimer();
 
         new CountDownTimer(60000, 1000) {
 
@@ -200,12 +215,12 @@ public class QuestionActivity extends AppCompatActivity {
                 timer.setText("Done!");
             }
 
-        }.start();
+        }.start();*/
     }
 
-    public TextView getTimer(){
+   /* public TextView getTimer(){
         return (TextView) findViewById(R.id.timer);
-    }
+    }*/
 
     public Button getButton0(){
         return (Button)findViewById(R.id.Button0);
