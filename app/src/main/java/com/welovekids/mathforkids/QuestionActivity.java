@@ -1,10 +1,14 @@
 package com.welovekids.mathforkids;
 
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +20,9 @@ import com.welovekids.util.Question;
 
 public class QuestionActivity extends AppCompatActivity {
     Question question;
+
+     private MediaPlayer mp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +44,12 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-               Editable text = answer.getText();
-                if(text.length()== 0){
+                Editable text = answer.getText();
+                if (text.length() == 0) {
                     return;
                 }
 
-               CharSequence backspaced = text.subSequence(0,text.length()-1);
+                CharSequence backspaced = text.subSequence(0, text.length() - 1);
                 answer.setText(backspaced);
             }
         });
@@ -186,6 +193,23 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
+
+        mp=MediaPlayer.create(this,R.raw.schooldays);
+        mp.setLooping(true);
+        if(!isMuted())
+            mp.start();
+    }
+
+    private boolean isMuted() {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        return sp.getBoolean("mute", false);
+    }
+
+    @Override
+    protected void onDestroy() {
+        mp.stop();
+        mp = null;
+        super.onDestroy();
     }
 
     public Button getButton0(){
@@ -244,6 +268,7 @@ public class QuestionActivity extends AppCompatActivity {
 
 
     }
+
     public Button getEnter(){
 
         return (Button)findViewById(R.id.ButtonEnter);
