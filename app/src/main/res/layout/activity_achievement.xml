@@ -18,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/graytrophy"
+            android:src="@drawable/gray_trophy"
             />
 
         <ImageView
@@ -26,7 +26,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/graytrophy"
+            android:src="@drawable/gray_trophy"
             />
     </LinearLayout>
 
@@ -63,7 +63,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/graytrophy"
+            android:src="@drawable/gray_trophy"
             />
 
         <ImageView
@@ -71,7 +71,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/graytrophy"
+            android:src="@drawable/gray_trophy"
             />
     </LinearLayout>
     <LinearLayout
@@ -107,7 +107,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/graytrophy"
+            android:src="@drawable/gray_trophy"
             />
 
         <ImageView
@@ -115,7 +115,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/graytrophy"
+            android:src="@drawable/gray_trophy"
             />
     </LinearLayout>
     <LinearLayout
@@ -151,7 +151,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/graytrophy"
+            android:src="@drawable/gray_trophy"
             />
 
         <ImageView
@@ -159,7 +159,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/graytrophy"
+            android:src="@drawable/gray_trophy"
             />
     </LinearLayout>
     <LinearLayout
