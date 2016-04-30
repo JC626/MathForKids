@@ -41,6 +41,18 @@ public class Controller {
         return String.valueOf(totalIncorrect);
     }
 
+    /**
+     * Solves the current question being asked.
+     * Algorithm implements "spaced repetition" algorithm.
+     * This means that it would repeatedly ask the same questions n number of times.
+     * Once the user answers the type of question n number of times, it will move on
+     * to new set of questions.
+     *
+     * If the user answers incorrectly, the number of correctly answered decreases.
+     *
+     * @param solution User input
+     * @return true if the user entered correct
+     */
     public static boolean solve(String solution) {
         if (solution.equals(currentQuestion.getAnswer())) {
             totalCorrect++;
