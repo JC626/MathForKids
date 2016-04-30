@@ -110,14 +110,14 @@ public class Controller {
     /**
      * Executes the arithmetic operation on the two digits passed
      */
-    public static int getAnswer(int digit1, int digit2, char operator) {
+    public static double getAnswer(int digit1, int digit2, char operator) {
         switch (operator) {
             case '+':
                 return digit1 + digit2;
             case '-':
                 return digit1 - digit2;
             case '/':
-                return Math.round(digit1 / digit2);
+                return digit1 / digit2;
             case 'x':
                 return digit1 * digit2;
         }
