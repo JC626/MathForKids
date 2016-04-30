@@ -1,7 +1,8 @@
 package com.welovekids.mathforkids;
 
-import android.os.CountDownTimer;
+import android.content.SharedPreferences;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,9 +20,22 @@ public class QuestionActivity extends AppCompatActivity {
     Question question;
 
     @Override
+    public void onBackPressed() {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        pref
+                .edit()
+                .putInt("Highscore", Integer.valueOf(Controller.getCorrect()))
+                .apply();
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        Controller.resetFields();
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -74,8 +88,9 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 boolean ans=Controller.solve(answer.getText().toString());
                 final ImageView solved = (ImageView) findViewById(R.id.solved);
+                // To fix
 
-                if(ans){
+                if(ans== true){
                   solved.setImageResource(R.drawable.right);
                 }
                 else{
@@ -186,26 +201,7 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-        //Timer
-       /* final TextView timer = getTimer();
-
-        new CountDownTimer(60000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-               timer.setText("Seconds Left: " + millisUntilFinished / 1000);
-                //here you can have your logic to set text to edittext
-            }
-
-            public void onFinish() {
-                timer.setText("Done!");
-            }
-
-        }.start();*/
     }
-
-   /* public TextView getTimer(){
-        return (TextView) findViewById(R.id.timer);
-    }*/
 
     public Button getButton0(){
         return (Button)findViewById(R.id.Button0);
