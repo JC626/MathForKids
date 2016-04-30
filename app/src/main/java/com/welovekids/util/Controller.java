@@ -121,7 +121,7 @@ public class Controller {
             case '-':
                 return digit1 - digit2;
             case '/':
-                return digit1 / digit2;
+                return digit1 / (double)digit2;
             case 'x':
                 return digit1 * digit2;
         }

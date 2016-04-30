@@ -26,7 +26,7 @@ public class AddSub implements State {
     }
 
     public int getCorrectAnswered() {
-        return correct++;
+        return correct;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class AddSub implements State {
     }
 
     public int getIncorrectlyAnswered() {
-        return incorrect--;
+        return incorrect;
     }
 
     public String getAnswer(Question g) {
