@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".QuestionActivity" />
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".Score"></activity>
     </application>
 
