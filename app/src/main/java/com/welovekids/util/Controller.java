@@ -26,6 +26,13 @@ public class Controller {
     private static State currentState = QUESTIONS[progress];
     private static Question currentQuestion = currentState.getQuestion();
 
+    public static void resetFields(){
+        progress = 0;
+        totalCorrect = 0;
+        totalIncorrect = 0;
+        totalQuestions = 0;
+    }
+
     public static void setRange(int range) {
         Controller.range = range;
     }

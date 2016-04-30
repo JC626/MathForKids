@@ -20,6 +20,8 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
+        Controller.resetFields();
+
         if(question == null){
             final TextView questionText = (TextView)findViewById(R.id.question);
            String questionInput=Controller.askQuestion();  //Get question
