@@ -11,9 +11,9 @@ public class Add implements State {
 
     private int correct;
     private int incorrect;
-
     private String question;
 
+    @Override
     public Question getQuestion() {
         int digit1 = (int) generateRandomNumber();
         int digit2 = (int) generateRandomNumber();
@@ -24,10 +24,9 @@ public class Add implements State {
 
     }
 
+    @Override
     public int getCorrectAnswered() {
         return correct++;
-
-
     }
 
     @Override
@@ -35,33 +34,28 @@ public class Add implements State {
         return '+';
     }
 
+    @Override
     public int getIncorrectlyAnswered() {
         return incorrect--;
-
-
     }
 
+    @Override
     public String getAnswer(Question g) {
-
         return g.getAnswer();
-
-
     }
 
+    @Override
     public void setCorrectAnswered(int correct) {
-
         this.correct = correct;
     }
 
+    @Override
     public void setIncorrectlyAnswered(int incorrect) {
-
         this.incorrect = incorrect;
-
     }
 
+    @Override
     public double generateRandomNumber() {
-
-
         return (1 * Controller.range) + Math.random() * ((Math.random() * Controller.max) * Controller.range);
     }
 }

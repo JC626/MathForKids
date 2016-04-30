@@ -1,5 +1,6 @@
 package com.welovekids.mathforkids;
 
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
@@ -13,6 +14,7 @@ public class SettingsActivity extends AppCompatActivity {
     private Switch intermediate;
     private Switch advanced;
 
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

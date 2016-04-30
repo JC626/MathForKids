@@ -17,6 +17,7 @@ public class Controller {
     private static int progress = 0;
     private static int totalCorrect = 0;
     private static int totalIncorrect = 0;
+    private static int totalQuestions = 0;
 
     public static double max = 9;
     public static int range = 1;
@@ -28,16 +29,25 @@ public class Controller {
         range++;
     }
 
+    public static void decreaseDifficulty(){
+        range--;
+    }
+
+    public static int getTotalQuestions(){
+        return totalQuestions;
+    }
+
     public static String askQuestion() {
+        totalQuestions++;
         currentQuestion = currentState.getQuestion();
         return currentQuestion.getQuestion();
     }
 
-    public String getCorrect() {
+    public static String getCorrect() {
         return String.valueOf(totalCorrect);
     }
 
-    public String getTotalIncorrect() {
+    public static String getTotalIncorrect() {
         return String.valueOf(totalIncorrect);
     }
 
