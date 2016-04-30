@@ -201,8 +201,7 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-        //Timer
-       /* final TextView timer = getTimer();
+       final TextView timer = getTimer();
 
         new CountDownTimer(60000, 1000) {
 
@@ -212,15 +211,15 @@ public class QuestionActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
-                timer.setText("Done!");
+                //Change to game over screen
             }
 
-        }.start();*/
+        }.start();
     }
 
-   /* public TextView getTimer(){
+    public TextView getTimer(){
         return (TextView) findViewById(R.id.timer);
-    }*/
+    }
 
     public Button getButton0(){
         return (Button)findViewById(R.id.Button0);
