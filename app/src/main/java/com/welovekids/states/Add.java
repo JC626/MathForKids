@@ -18,7 +18,7 @@ public class Add implements State {
         int digit1 = (int) generateRandomNumber();
         int digit2 = (int) generateRandomNumber();
         char operator = getOperator();
-        double answer = Controller.getAnswer(digit1, digit2, operator);
+        int answer = (int)Controller.getAnswer(digit1, digit2, operator);
         return new QuestionImpl("" + digit1 + operator + digit2, String.valueOf(answer), String.valueOf(operator));
 
 
