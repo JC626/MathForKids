@@ -30,7 +30,7 @@ public class QuestionActivity extends AppCompatActivity {
         dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                char c = '.';
+                String c = ".";
                 answer.append(c);
             }
         });
@@ -58,7 +58,7 @@ public class QuestionActivity extends AppCompatActivity {
         b0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                char c = '0';
+                String c = "0";
                 answer.append(c);
             }
         });
@@ -68,7 +68,7 @@ public class QuestionActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                char c = '1';
+                String c = "1";
                 answer.append(c);
             }
         });
@@ -76,7 +76,7 @@ public class QuestionActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                char c = '2';
+                String c = "2";
                 answer.append(c);
             }
         });
@@ -84,7 +84,7 @@ public class QuestionActivity extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                char c = '3';
+                String c = "3";
                 answer.append(c);
             }
         });
@@ -92,7 +92,7 @@ public class QuestionActivity extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                char c = '4';
+                String c = "4";
                 answer.append(c);
             }
         });
@@ -100,7 +100,7 @@ public class QuestionActivity extends AppCompatActivity {
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                char c = '5';
+                String c = "5";
                 answer.append(c);
             }
         });
@@ -108,7 +108,7 @@ public class QuestionActivity extends AppCompatActivity {
         b6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                char c = '6';
+                String c = "6";
                 answer.append(c);
             }
         });
@@ -116,7 +116,7 @@ public class QuestionActivity extends AppCompatActivity {
         b7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                char c = '7';
+                String c = "7";
                 answer.append(c);
             }
         });
@@ -124,7 +124,15 @@ public class QuestionActivity extends AppCompatActivity {
         b8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                char c = '8';
+                String c = "8";
+                answer.append(c);
+            }
+        });
+        Button b9=getButton9();
+        b9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String c = "9";
                 answer.append(c);
             }
         });
@@ -164,6 +172,10 @@ public class QuestionActivity extends AppCompatActivity {
     }
     public Button getButton8(){
         return (Button)findViewById(R.id.Button8);
+
+    }
+    public Button getButton9(){
+        return (Button)findViewById(R.id.Button9);
 
     }
     public Button getSpace(){
