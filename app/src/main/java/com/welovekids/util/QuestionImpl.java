@@ -11,7 +11,13 @@ public class QuestionImpl implements Question{
     public QuestionImpl(){
         this.question = null;
         this.answer = null;
-        operator = null;
+        this.operator = null;
+    }
+
+    public QuestionImpl(String question, String answer, String operator){
+        this.question = question;
+        this.answer = answer;
+        this.operator = operator;
     }
 
     /** retrieves the question as a string *
