@@ -18,6 +18,6 @@ public class Score extends AppCompatActivity {
         TextView totalWrong = (TextView) findViewById(R.id.totalWrong);
         totalWrong.append(Controller.getTotalIncorrect());
         TextView totalQuestions = (TextView) findViewById(R.id.totalQuestions);
-        totalQuestions.append(String.valueOf(Controller.getCorrect() + Controller.getTotalIncorrect()));
+        totalQuestions.append(String.valueOf(Controller.getTotalQuestions()));
     }
 }

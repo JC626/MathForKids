@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         // Retrieve high score
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
         Controller.setHighScore(pref.getInt("Highscore", Controller.getHighScore()));
+        Controller.setOverallQuestions(pref.getInt("TotalQues", 0));
 
         // Create buttons and add action listeners
         Button score = (Button) findViewById(R.id.score);
@@ -59,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
         acheive.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, AchievementActivity.class);
+                startActivity(intent);
             }
         });
 

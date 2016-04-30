@@ -1,13 +1,16 @@
 package com.welovekids.mathforkids;
 
-import android.content.SharedPreferences;
+
 import android.os.CountDownTimer;
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,12 +23,16 @@ import com.welovekids.util.Question;
 public class QuestionActivity extends AppCompatActivity {
     Question question;
 
+     private MediaPlayer mp;
+
+
     @Override
     public void onBackPressed() {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
         pref
                 .edit()
                 .putInt("Highscore", Integer.valueOf(Controller.getCorrect()))
+                .putInt("TotalQues", Integer.valueOf(Controller.getTotalQuestions() + Controller.getOverallQuestions()))
                 .apply();
         super.onBackPressed();
     }
@@ -201,7 +208,13 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-       final TextView timer = getTimer();
+
+        mp=MediaPlayer.create(this,R.raw.schooldays);
+        mp.setLooping(true);
+        if(!isMuted())
+            mp.start();
+
+        final TextView timer = getTimer();
 
         new CountDownTimer(60000, 1000) {
 
@@ -217,6 +230,17 @@ public class QuestionActivity extends AppCompatActivity {
         }.start();
     }
 
+    private boolean isMuted() {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        return sp.getBoolean("mute", false);
+    }
+
+    @Override
+    protected void onDestroy() {
+        mp.stop();
+        mp = null;
+        super.onDestroy();
+    }
     public TextView getTimer(){
         return (TextView) findViewById(R.id.timer);
     }
@@ -277,6 +301,7 @@ public class QuestionActivity extends AppCompatActivity {
 
 
     }
+
     public Button getEnter(){
 
         return (Button)findViewById(R.id.ButtonEnter);
