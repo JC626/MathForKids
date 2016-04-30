@@ -19,6 +19,7 @@ public class Controller {
     private static int totalCorrect = 0;
     private static int totalIncorrect = 0;
     private static int totalQuestions = 0;
+    private static int highScore = 0;
 
     public static double max = 9;
     public static int range = 1;
@@ -26,11 +27,19 @@ public class Controller {
     private static State currentState = QUESTIONS[progress];
     private static Question currentQuestion = currentState.getQuestion();
 
-    public static void resetFields(){
+    public static void resetFields() {
         progress = 0;
         totalCorrect = 0;
         totalIncorrect = 0;
         totalQuestions = 0;
+    }
+
+    public static int getHighScore() {
+        return highScore;
+    }
+
+    public static void setHighScore(int h) {
+        highScore = h;
     }
 
     public static void setRange(int range) {
@@ -42,7 +51,6 @@ public class Controller {
     }
 
     public static String askQuestion() {
-        totalQuestions++;
         currentQuestion = currentState.getQuestion();
         return currentQuestion.getQuestion();
     }
@@ -68,41 +76,49 @@ public class Controller {
      * @return true if the user entered correct
      */
     public static boolean solve(String solution) {
-        if (solution.equals(currentQuestion.getAnswer())) {
-            totalCorrect++;
-            currentState.setCorrectAnswered(currentState.getCorrectAnswered() + 1);
-            // If user answered 5 correct answers, go to the next state
-            if (currentState.getCorrectAnswered() == 5) {
-                currentState.setCorrectAnswered(0);
-                currentState.setIncorrectlyAnswered(0);
-                progress++;
-                if (progress == QUESTIONS.length) {
-                    progress = QUESTIONS.length - 1;
+        String answer = currentQuestion.getAnswer();
+        try {
+            totalQuestions++;
+            double theAnswer = Double.parseDouble(answer);
+            double theSolution = Double.parseDouble(solution);
+            if (theAnswer == theSolution) {
+                totalCorrect++;
+                currentState.setCorrectAnswered(currentState.getCorrectAnswered() + 1);
+                // If user answered 5 correct answers, go to the next state
+                if (currentState.getCorrectAnswered() == 5) {
+                    currentState.setCorrectAnswered(0);
+                    currentState.setIncorrectlyAnswered(0);
+                    progress++;
+                    if (progress == QUESTIONS.length) {
+                        progress = QUESTIONS.length - 1;
+                    }
+                    currentState = QUESTIONS[progress];
+                    currentQuestion = currentState.getQuestion();
+                } else {
+                    // Just generate a new question
+                    currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() - 1);
+                    currentQuestion = currentState.getQuestion();
                 }
-                currentState = QUESTIONS[progress];
-                currentQuestion = currentState.getQuestion();
+                return true;
             } else {
-                // Just generate a new question
-                currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() - 1);
-                currentQuestion = currentState.getQuestion();
-            }
-            return true;
-        } else {
-            totalIncorrect++;
-            currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() + 1);
-            if (currentState.getIncorrectlyAnswered() == 5) {
-                currentState.setCorrectAnswered(0);
-                currentState.setIncorrectlyAnswered(0);
-                progress--;
-                if (progress < 0) {
-                    progress = 0;
+                totalIncorrect++;
+                currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() + 1);
+                if (currentState.getIncorrectlyAnswered() == 5) {
+                    currentState.setCorrectAnswered(0);
+                    currentState.setIncorrectlyAnswered(0);
+                    progress--;
+                    if (progress < 0) {
+                        progress = 0;
+                    }
+                    currentState = QUESTIONS[progress];
+                    currentQuestion = currentState.getQuestion();
+                } else {
+                    currentState.setCorrectAnswered(currentState.getCorrectAnswered() - 1);
+                    currentQuestion = currentState.getQuestion();
                 }
-                currentState = QUESTIONS[progress];
-                currentQuestion = currentState.getQuestion();
-            } else {
-                currentState.setCorrectAnswered(currentState.getCorrectAnswered() - 1);
-                currentQuestion = currentState.getQuestion();
+                return false;
             }
+        } catch (Exception e) {
             return false;
         }
     }
@@ -110,14 +126,14 @@ public class Controller {
     /**
      * Executes the arithmetic operation on the two digits passed
      */
-    public static double getAnswer(int digit1, int digit2, char operator) {
+    public static double getAnswer(double digit1, double digit2, char operator) {
         switch (operator) {
             case '+':
                 return digit1 + digit2;
             case '-':
                 return digit1 - digit2;
             case '/':
-                return digit1 / (double)digit2;
+                return digit1 / digit2;
             case 'x':
                 return digit1 * digit2;
         }
