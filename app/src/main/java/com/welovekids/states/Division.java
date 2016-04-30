@@ -26,7 +26,13 @@ public class Division implements State {
         int digit1 = (int) generateRandomNumber();
         int digit2 = (int) generateRandomNumber();
         char operator = getOperator();
-        int answer = Controller.getAnswer(digit1, digit2, operator);
+        double answer = Controller.getAnswer(digit1, digit2, operator);
+        int check = (int)answer;
+        double checkAnswer = answer - check;
+        if(checkAnswer == 0){
+            return new QuestionImpl("" + digit1 + operator + digit2,
+                    String.valueOf((int)answer), String.valueOf(operator));
+        }
         return new QuestionImpl("" + digit1 + operator + digit2,
                 String.valueOf(answer), String.valueOf(operator));
     }
