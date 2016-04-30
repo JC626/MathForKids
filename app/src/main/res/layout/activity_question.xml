@@ -41,7 +41,7 @@
                 android:layout_weight="1"/>
 
             <!--Set to some image either tick or cross-->
-            <ImageView
+            <ImageView android:id="@+id/solved"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"/>
@@ -149,11 +149,11 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:text="."/>
-                <Button
+                <Button android:id="@+id/ButtonNegative"
                     android:layout_height="wrap_content"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:text=""/>
+                    android:text="-"/>
                 <Button android:id="@+id/ButtonEnter"
                     android:layout_height="wrap_content"
                     android:layout_width="0dp"
