@@ -3,7 +3,7 @@ package com.welovekids.util;
 /**
  * Question implementation
  */
-public abstract class QuestionImpl implements Question{
+public class QuestionImpl implements Question{
     private String question;
     private String answer;
     private String operator;
@@ -47,6 +47,11 @@ public abstract class QuestionImpl implements Question{
     public void setAnswer(String answer){
         this.answer = answer;
     }
+
+    public void setOperator(String operator){
+        this.operator = operator;
+    }
+
     /** prints the question -> answer pair */
     public String printQuestion(){
         return question + " = " + answer;
