@@ -12,17 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textColor="#fff"
-        android:text="Total Correct: "/>
-    <TextView android:id="@+id/totalWrong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="#fff"
-        android:text="Total Incorrect: "/>
-    <TextView android:id="@+id/totalQuestions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="#fff"
-        android:text="Total Questions: "/>
+        android:textSize="50sp"
+        android:paddingBottom="10dp"
+        android:text="HighScore"/>
+    <TextView android:id="@+id/roundScore"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingBottom="10dp"
+    android:textColor="#fff"
+    android:text="HighScore: "/>
 </LinearLayout>
