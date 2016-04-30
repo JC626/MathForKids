@@ -13,6 +13,8 @@ public class Controller {
         range++;
     }
 
+
+
     /** Executes the arithmetic operation on the two digits passed */
     public static int getAnswer(int digit1, int digit2, char operator){
         switch (operator) {

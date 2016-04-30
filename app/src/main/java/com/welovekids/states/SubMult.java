@@ -12,29 +12,48 @@ public class SubMult implements State {
     private int incorrect;
 
     private String question;
-    public Question getQuestion(){
+
+    public Question getQuestion() {
         int digit1 = (int) generateRandomNumber();
         int digit2 = (int) generateRandomNumber();
         char operator = getOperator();
         int answer = Controller.getAnswer(digit1, digit2, operator);
-        return new QuestionImpl(""+digit1+operator+digit2,String.valueOf(answer),String.valueOf(operator));
+        return new QuestionImpl("" + digit1 + operator + digit2, String.valueOf(answer), String.valueOf(operator));
 
 
     }
-    public int getCorrectAnswered(){return correct;}
+
+    public int getCorrectAnswered() {
+        return correct;
+    }
 
     @Override
     public char getOperator() {
-        double val=Math.random();
-        if(val<0.5){return '-';}
-        else {return 'x';}
+        double val = Math.random();
+        if (val < 0.5) {
+            return '-';
+        } else {
+            return 'x';
+        }
     }
 
-    public int getIncorrectlyAnswered(){return incorrect;}
+    public int getIncorrectlyAnswered() {
+        return incorrect;
+    }
 
-    public String getAnswer(Question g){return g.getAnswer();}
-    public void setCorrectAnswered(int correct){this.correct=correct;}
-    public void setIncorrectlyAnswered(int incorrect){this.incorrect=incorrect;}
-    public double generateRandomNumber(){
-        return (1* Controller.range)+Math.random()*((Math.random()*Controller.max)*Controller.range);}
+    public String getAnswer(Question g) {
+        return g.getAnswer();
+    }
+
+    public void setCorrectAnswered(int correct) {
+        this.correct = correct;
+    }
+
+    public void setIncorrectlyAnswered(int incorrect) {
+        this.incorrect = incorrect;
+    }
+
+    public double generateRandomNumber() {
+        return (1 * Controller.range) + Math.random() * ((Math.random() * Controller.max) * Controller.range);
+    }
 }

@@ -7,7 +7,7 @@ import com.welovekids.util.QuestionImpl;
 /**
  * Created by chris on 30/04/2016.
  */
-public class Division implements State{
+public class Division implements State {
     private int correct = 0;
     private int incorrect = 0;
 
@@ -27,8 +27,8 @@ public class Division implements State{
         int digit2 = (int) generateRandomNumber();
         char operator = getOperator();
         int answer = Controller.getAnswer(digit1, digit2, operator);
-        return new QuestionImpl(""+digit1+operator+digit2,
-                String.valueOf(answer),String.valueOf(operator));
+        return new QuestionImpl("" + digit1 + operator + digit2,
+                String.valueOf(answer), String.valueOf(operator));
     }
 
     @Override
@@ -38,8 +38,8 @@ public class Division implements State{
 
     @Override
     public double generateRandomNumber() {
-        return (1* Controller.range)+Math.random()
-                *((Math.random()*Controller.max)*Controller.range);
+        return (1 * Controller.range) + Math.random()
+                * ((Math.random() * Controller.max) * Controller.range);
     }
 
     @Override

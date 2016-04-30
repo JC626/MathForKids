@@ -7,11 +7,18 @@ import com.welovekids.util.Question;
  */
 public interface State {
     public int getCorrectAnswered();
+
     public int getIncorrectlyAnswered();
+
     public Question getQuestion();
+
     public String getAnswer(Question q);
+
     public double generateRandomNumber();
+
     public void setCorrectAnswered(int correct);
+
     public void setIncorrectlyAnswered(int incorrect);
+
     public char getOperator();
 }
