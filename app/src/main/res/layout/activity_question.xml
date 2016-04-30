@@ -10,7 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.welovekids.mathforkids.QuestionActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,11 +26,6 @@
 
     </LinearLayout>
 
-
-    <!--Need to fix textField-->
-
-
-    <!--Add GridLayout-->
     <!--Add Button functionality-->
 
     <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -45,45 +39,45 @@
         tools:context=".GridXMLActivity"
         android:layout_gravity="center_vertical">
         <!--Row one-->
-        <Button
+        <Button  android:id="@+id/Button1"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="1"/>
-        <Button
+        <Button android:id="@+id/Button2"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="2"/>
-        <Button
+        <Button android:id="@+id/Button3"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="3"/>
-        <Button
+        <Button android:id="@+id/ButtonBackSpace"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="X"/>
+            android:text="\u232b"/>
         <!--Row two-->
-        <Button
+        <Button android:id="@+id/Button4"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="4"/>
-        <Button
+        <Button android:id="@+id/Button5"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="5"/>
-        <Button
+        <Button android:id="@+id/Button6"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="6"/>
-        <Button
+        <Button android:id="@+id/ButtonClear"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="C"/>
         <!--Row three-->
-        <Button
+        <Button android:id="@+id/Button7"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="7"/>
-        <Button
+        <Button android:id="@+id/Button8"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="8"/>
@@ -96,11 +90,11 @@
             android:layout_width="wrap_content"
             android:text=""/>
         <!--Row four-->
-        <Button
+        <Button android:id="@+id/Button0"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="0"/>
-        <Button
+        <Button android:id="@+id/ButtonDot"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="."/>
@@ -108,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text=""/>
-        <Button
+        <Button android:id="@+id/ButtonEnter"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="="/>
