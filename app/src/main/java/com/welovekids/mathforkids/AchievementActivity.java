@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.welovekids.util.Controller;
+import com.welovekids.util.Highscore;
 
 public class AchievementActivity extends AppCompatActivity {
 
@@ -25,7 +26,8 @@ public class AchievementActivity extends AppCompatActivity {
         final ImageView trophy7 = (ImageView) findViewById(R.id.trophy6);
         final ImageView trophy8 = (ImageView) findViewById(R.id.trophy6);
 
-        if (Integer.parseInt(Controller.getCorrect()) >= 1) {
+        Highscore highscore = new Highscore(this);
+        if (highscore.getHighScore() >= 1) {
             //yellowtrophy for one Q ans
             trophy1.setImageResource(R.drawable.yellowtrophy);
         }else {
@@ -33,14 +35,14 @@ public class AchievementActivity extends AppCompatActivity {
         }
 
 
-        if (Integer.parseInt(Controller.getCorrect()) >= 5) {
+        if (highscore.getHighScore() >= 5) {
             //yellowtrophy for 5 Q ans
             trophy2.setImageResource(R.drawable.yellowtrophy);
 
         }else {
             trophy2.setImageResource(R.drawable.graytrophy);
         }
-        if (Integer.parseInt(Controller.getCorrect()) >= 10) {
+        if (highscore.getHighScore() >= 10) {
             //yellowtrophy for 10 Q ans
             trophy3.setImageResource(R.drawable.yellowtrophy);
         }else {
@@ -48,19 +50,19 @@ public class AchievementActivity extends AppCompatActivity {
         }
 
 
-        if (Integer.parseInt(Controller.getCorrect()) >=20) {
+        if (highscore.getHighScore() >= 15) {
             //yellowtrophy for 20 Q ans
             trophy4.setImageResource(R.drawable.yellowtrophy);
         }else {
             trophy4.setImageResource(R.drawable.graytrophy);
         }
-        if (Integer.parseInt(Controller.getCorrect()) >= 50) {
+        if (highscore.getHighScore() >= 20) {
             //yellowtrophy for 50 Q ans
             trophy5.setImageResource(R.drawable.yellowtrophy);
         }else {
             trophy5.setImageResource(R.drawable.graytrophy);
         }
-        if (Integer.parseInt(Controller.getCorrect()) >= 100) {
+        if (highscore.getHighScore() >= 30) {
             //yellowtrophy for 100 Q ans
             trophy6.setImageResource(R.drawable.yellowtrophy);
         }else {

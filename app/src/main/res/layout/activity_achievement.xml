@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="Highscore: 20" />
+            android:text="Highscore: 15" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -131,7 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="Highscore: 50" />
+            android:text="Highscore: 20" />
 
         <TextView
             android:id="@+id/totalQuestions100"
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="Highscore: 100" />
+            android:text="Highscore: 30" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
