@@ -26,6 +26,7 @@ public class QuestionActivity extends AppCompatActivity {
         pref
                 .edit()
                 .putInt("Highscore", Integer.valueOf(Controller.getCorrect()))
+                .putInt("TotalQues", Integer.valueOf(Controller.getTotalQuestions() + Controller.getOverallQuestions()))
                 .apply();
         super.onBackPressed();
     }
@@ -40,31 +41,31 @@ public class QuestionActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        if(question == null){
-            final TextView questionText = (TextView)findViewById(R.id.question);
-           String questionInput=Controller.askQuestion();  //Get question
+        if (question == null) {
+            final TextView questionText = (TextView) findViewById(R.id.question);
+            String questionInput = Controller.askQuestion();  //Get question
             questionText.setText(questionInput);
         }
 
-        final EditText answer=(EditText)findViewById(R.id.user_answer);
+        final EditText answer = (EditText) findViewById(R.id.user_answer);
         answer.setKeyListener(null);
-        Button backspace=getSpace();
+        Button backspace = getSpace();
         backspace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-               Editable text = answer.getText();
-                if(text.length()== 0){
+                Editable text = answer.getText();
+                if (text.length() == 0) {
                     return;
                 }
 
-               CharSequence backspaced = text.subSequence(0,text.length()-1);
+                CharSequence backspaced = text.subSequence(0, text.length() - 1);
                 answer.setText(backspaced);
             }
         });
 
 
-        Button dot=getDot();
+        Button dot = getDot();
         dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,28 +74,27 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        Button clear=getClear();
+        Button clear = getClear();
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               answer.setText("");
+                answer.setText("");
 
             }
         });
 
 
-        Button enter=getEnter();
+        Button enter = getEnter();
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean ans=Controller.solve(answer.getText().toString());
+                boolean ans = Controller.solve(answer.getText().toString());
                 final ImageView solved = (ImageView) findViewById(R.id.solved);
 
-                if(ans){
-                  solved.setImageResource(R.drawable.right);
-                }
-                else{
-                   solved.setImageResource(R.drawable.wrong);
+                if (ans) {
+                    solved.setImageResource(R.drawable.right);
+                } else {
+                    solved.setImageResource(R.drawable.wrong);
                 }
                 solved.setVisibility(View.VISIBLE);
                 new Handler().postDelayed(new Runnable() {
@@ -111,7 +111,7 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        Button negative=getNegative();
+        Button negative = getNegative();
         negative.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,7 +119,7 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        Button b0=getButton0();
+        Button b0 = getButton0();
         b0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,7 +129,7 @@ public class QuestionActivity extends AppCompatActivity {
         });
 
 
-    Button b1=getButton1();
+        Button b1 = getButton1();
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,7 +137,7 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-        Button b2=getButton2();
+        Button b2 = getButton2();
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,7 +145,7 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-        Button b3=getButton3();
+        Button b3 = getButton3();
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,7 +153,7 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-        Button b4=getButton4();
+        Button b4 = getButton4();
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -161,7 +161,7 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-        Button b5=getButton5();
+        Button b5 = getButton5();
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -169,7 +169,7 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-        Button b6=getButton6();
+        Button b6 = getButton6();
         b6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -177,7 +177,7 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-        Button b7=getButton7();
+        Button b7 = getButton7();
         b7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -185,7 +185,7 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-        Button b8=getButton8();
+        Button b8 = getButton8();
         b8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -193,7 +193,7 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append(c);
             }
         });
-        Button b9=getButton9();
+        Button b9 = getButton9();
         b9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -222,65 +222,77 @@ public class QuestionActivity extends AppCompatActivity {
         return (TextView) findViewById(R.id.timer);
     }*/
 
-    public Button getButton0(){
-        return (Button)findViewById(R.id.Button0);
+    public Button getButton0() {
+        return (Button) findViewById(R.id.Button0);
 
     }
 
-    public Button getButton1(){
-        return (Button)findViewById(R.id.Button1);
+    public Button getButton1() {
+        return (Button) findViewById(R.id.Button1);
 
     }
-    public Button getButton2(){
-        return (Button)findViewById(R.id.Button2);
+
+    public Button getButton2() {
+        return (Button) findViewById(R.id.Button2);
 
     }
-    public Button getButton3(){
-        return (Button)findViewById(R.id.Button3);
 
-    } public Button getButton4(){
-        return (Button)findViewById(R.id.Button4);
+    public Button getButton3() {
+        return (Button) findViewById(R.id.Button3);
 
     }
-    public Button getButton5(){
-        return (Button)findViewById(R.id.Button5);
+
+    public Button getButton4() {
+        return (Button) findViewById(R.id.Button4);
 
     }
-    public Button getButton6(){
-        return (Button)findViewById(R.id.Button6);
+
+    public Button getButton5() {
+        return (Button) findViewById(R.id.Button5);
 
     }
-    public Button getButton7(){
-        return (Button)findViewById(R.id.Button7);
+
+    public Button getButton6() {
+        return (Button) findViewById(R.id.Button6);
 
     }
-    public Button getButton8(){
-        return (Button)findViewById(R.id.Button8);
+
+    public Button getButton7() {
+        return (Button) findViewById(R.id.Button7);
 
     }
-    public Button getButton9(){
-        return (Button)findViewById(R.id.Button9);
-    }
 
-    public Button getNegative(){
-        return (Button)findViewById(R.id.ButtonNegative);
-    }
-
-    public Button getSpace(){
-        return (Button)findViewById(R.id.ButtonBackSpace);
-    }
-    public Button getClear(){
-
-        return (Button)findViewById(R.id.ButtonClear);
-    }
-    public Button getDot(){
-        return (Button)findViewById(R.id.ButtonDot);
-
+    public Button getButton8() {
+        return (Button) findViewById(R.id.Button8);
 
     }
-    public Button getEnter(){
 
-        return (Button)findViewById(R.id.ButtonEnter);
+    public Button getButton9() {
+        return (Button) findViewById(R.id.Button9);
+    }
+
+    public Button getNegative() {
+        return (Button) findViewById(R.id.ButtonNegative);
+    }
+
+    public Button getSpace() {
+        return (Button) findViewById(R.id.ButtonBackSpace);
+    }
+
+    public Button getClear() {
+
+        return (Button) findViewById(R.id.ButtonClear);
+    }
+
+    public Button getDot() {
+        return (Button) findViewById(R.id.ButtonDot);
+
+
+    }
+
+    public Button getEnter() {
+
+        return (Button) findViewById(R.id.ButtonEnter);
     }
 
 
