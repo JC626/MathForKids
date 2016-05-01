@@ -7,7 +7,7 @@ import com.welovekids.util.QuestionImpl;
 /**
  * Created by chris on 30/04/2016.
  */
-public class Multiply implements State{
+public class Multiply implements State {
     private int correct = 0;
     private int incorrect = 0;
 
@@ -26,9 +26,9 @@ public class Multiply implements State{
         int digit1 = (int) generateRandomNumber();
         int digit2 = (int) generateRandomNumber();
         char operator = getOperator();
-        int answer = (int)Controller.getAnswer(digit1, digit2, operator);
-        return new QuestionImpl(""+digit1+operator+digit2,
-                String.valueOf(answer),String.valueOf(operator));
+        int answer = (int) Controller.getAnswer(digit1, digit2, operator);
+        return new QuestionImpl("" + digit1 + operator + digit2,
+                String.valueOf(answer), String.valueOf(operator));
     }
 
     @Override
@@ -38,8 +38,8 @@ public class Multiply implements State{
 
     @Override
     public double generateRandomNumber() {
-        return (1* Controller.range)+Math.random()
-                *((Math.random()*Controller.max)*Controller.range);
+        return (1 * Math.pow(10, Controller.range - 1)) + Math.random()
+                * ((Math.random() * Controller.max) * Math.pow(10, Controller.range));
     }
 
     @Override

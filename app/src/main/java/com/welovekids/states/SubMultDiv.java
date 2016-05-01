@@ -44,8 +44,8 @@ public class SubMultDiv implements State {
 
     @Override
     public double generateRandomNumber() {
-        return (1 * Controller.range) + Math.random()
-                * ((Math.random() * Controller.max) * Controller.range);
+        return (1 * Math.pow(10,Controller.range-1)) + Math.random()
+                * ((Math.random() * Controller.max) * Math.pow(10,Controller.range));
     }
 
     @Override
