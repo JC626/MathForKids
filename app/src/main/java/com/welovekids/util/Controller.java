@@ -20,7 +20,6 @@ public class Controller {
     private static int totalIncorrect = 0;
     private static int totalQuestions = 0;
     private static int highScore = 0;
-    private static int overallQuestions = 0;
 
     public static double max = 9;
     public static int range = 1;
@@ -35,13 +34,6 @@ public class Controller {
         totalQuestions = 0;
     }
 
-    public static int getOverallQuestions(){
-        return overallQuestions;
-    }
-
-    public static void setOverallQuestions(int ques){
-        overallQuestions = ques;
-    }
 
     public static int getHighScore() {
         return highScore;

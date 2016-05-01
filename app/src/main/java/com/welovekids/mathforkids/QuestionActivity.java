@@ -33,10 +33,6 @@ public class QuestionActivity extends AppCompatActivity {
             Controller.setHighScore(Integer.parseInt(Controller.getCorrect()));
             pref.edit().putInt("Highscore", Integer.parseInt(Controller.getCorrect()));
         }
-        pref
-                .edit()
-                .putInt("TotalQues", Integer.valueOf(Controller.getTotalQuestions() + Controller.getOverallQuestions()))
-                .apply();
         super.onBackPressed();
     }
 
