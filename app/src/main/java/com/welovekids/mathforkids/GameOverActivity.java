@@ -12,9 +12,13 @@ public class GameOverActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
-        //Get gameCorrect, gameQuestions, gameWrong, highSocre
-        //Set to textviews
-        //TextView highScore = (TextView)findViewById(R.id.roundScore);
+        TextView totalCorrect = (TextView) findViewById(R.id.roundCorrect);
+        totalCorrect.append(Controller.getCorrect());
+        TextView totalWrong = (TextView) findViewById(R.id.roundIncorrect);
+        totalWrong.append(Controller.getTotalIncorrect());
+        TextView totalQuestions = (TextView) findViewById(R.id.roundAnswered);
+        totalQuestions.append(String.valueOf(Controller.getTotalQuestions()));
+
 
     }
 }

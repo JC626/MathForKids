@@ -36,11 +36,11 @@
         android:paddingBottom="10dp"
         android:textColor="#fff"
         android:text="Total Questions Answered: "/>
-    <TextView android:id="@+id/roundScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:paddingBottom="10dp"
-        android:textColor="#fff"
-        android:text="HighScore: "/>
+    <!--<TextView android:id="@+id/roundScore"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:paddingBottom="10dp"-->
+        <!--android:textColor="#fff"-->
+        <!--android:text="HighScore: "/>-->
 </LinearLayout>
