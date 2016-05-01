@@ -26,7 +26,7 @@ public class Add implements State {
 
     @Override
     public int getCorrectAnswered() {
-        return correct++;
+        return correct;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Add implements State {
 
     @Override
     public int getIncorrectlyAnswered() {
-        return incorrect--;
+        return incorrect;
     }
 
     @Override
