@@ -27,57 +27,57 @@ public class AchievementActivity extends AppCompatActivity {
 
         if (Controller.getHighScore() >= 1) {
             //yellowtrophy for one Q ans
-            trophy1.setImageResource(R.drawable.yellow_trophy);
+            trophy1.setImageResource(R.drawable.yellowtrophy);
         }else {
-            trophy1.setImageResource(R.drawable.gray_trophy);
+            trophy1.setImageResource(R.drawable.graytrophy);
         }
 
 
         if (Controller.getHighScore() >= 5) {
             //yellowtrophy for 5 Q ans
-            trophy2.setImageResource(R.drawable.yellow_trophy);
+            trophy2.setImageResource(R.drawable.yellowtrophy);
 
         }else {
-            trophy2.setImageResource(R.drawable.gray_trophy);
+            trophy2.setImageResource(R.drawable.graytrophy);
         }
         if (Controller.getHighScore() >= 10) {
             //yellowtrophy for 10 Q ans
-            trophy3.setImageResource(R.drawable.yellow_trophy);
+            trophy3.setImageResource(R.drawable.yellowtrophy);
         }else {
-            trophy3.setImageResource(R.drawable.gray_trophy);
+            trophy3.setImageResource(R.drawable.graytrophy);
         }
 
 
         if (Controller.getHighScore() >= 20) {
             //yellowtrophy for 20 Q ans
-            trophy4.setImageResource(R.drawable.yellow_trophy);
+            trophy4.setImageResource(R.drawable.yellowtrophy);
         }else {
-            trophy4.setImageResource(R.drawable.gray_trophy);
+            trophy4.setImageResource(R.drawable.graytrophy);
         }
         if (Controller.getHighScore() >= 50) {
             //yellowtrophy for 50 Q ans
-            trophy5.setImageResource(R.drawable.yellow_trophy);
+            trophy5.setImageResource(R.drawable.yellowtrophy);
         }else {
-            trophy5.setImageResource(R.drawable.gray_trophy);
+            trophy5.setImageResource(R.drawable.graytrophy);
         }
         if (Controller.getHighScore() >= 100) {
             //yellowtrophy for 100 Q ans
-            trophy6.setImageResource(R.drawable.yellow_trophy);
+            trophy6.setImageResource(R.drawable.yellowtrophy);
         }else {
-            trophy6.setImageResource(R.drawable.gray_trophy);
+            trophy6.setImageResource(R.drawable.graytrophy);
         }
 
         if (Integer.parseInt(Controller.getCorrect()) >= 50) {
             //yellowtrophy for 100 Q ans
-            trophy7.setImageResource(R.drawable.yellow_trophy);
+            trophy7.setImageResource(R.drawable.yellowtrophy);
         }else {
-            trophy7.setImageResource(R.drawable.gray_trophy);
+            trophy7.setImageResource(R.drawable.graytrophy);
         }
         if (Integer.parseInt(Controller.getCorrect()) >= 100) {
             //yellowtrophy for 100 Q ans
-            trophy8.setImageResource(R.drawable.yellow_trophy);
+            trophy8.setImageResource(R.drawable.yellowtrophy);
         }else {
-            trophy8.setImageResource(R.drawable.gray_trophy);
+            trophy8.setImageResource(R.drawable.graytrophy);
         }
     }
 }
