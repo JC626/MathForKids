@@ -78,12 +78,15 @@ public class Controller {
      */
     public static boolean solve(String solution) {
         String answer = currentQuestion.getAnswer();
+        if(answer == null || answer.equals("")){
+            return false;
+        }
         try {
-            totalQuestions++;
             double theAnswer = Double.parseDouble(answer);
             double theSolution = Double.parseDouble(solution);
             if (theAnswer == theSolution) {
                 totalCorrect++;
+                totalQuestions++;
                 currentState.setCorrectAnswered(currentState.getCorrectAnswered() + 1);
                 // If user answered 5 correct answers, go to the next state
                 if (currentState.getCorrectAnswered() == 5) {
@@ -103,6 +106,7 @@ public class Controller {
                 return true;
             } else {
                 totalIncorrect++;
+                totalQuestions++;
                 currentState.setIncorrectlyAnswered(currentState.getIncorrectlyAnswered() + 1);
                 if (currentState.getIncorrectlyAnswered() == 5) {
                     currentState.setCorrectAnswered(0);
