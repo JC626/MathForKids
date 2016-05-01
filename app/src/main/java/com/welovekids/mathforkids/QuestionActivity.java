@@ -29,9 +29,12 @@ public class QuestionActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        if(pref.getInt("Highscore", 0) < Integer.parseInt(Controller.getCorrect())){
+            Controller.setHighScore(Integer.parseInt(Controller.getCorrect()));
+            pref.edit().putInt("Highscore", Integer.parseInt(Controller.getCorrect()));
+        }
         pref
                 .edit()
-                .putInt("Highscore", Integer.valueOf(Controller.getCorrect()))
                 .putInt("TotalQues", Integer.valueOf(Controller.getTotalQuestions() + Controller.getOverallQuestions()))
                 .apply();
         super.onBackPressed();
