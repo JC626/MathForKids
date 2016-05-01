@@ -23,10 +23,23 @@ import com.welovekids.util.Highscore;
 import com.welovekids.util.Question;
 
 public class QuestionActivity extends AppCompatActivity {
+    static boolean active = false;
     Question question;
     private Highscore highscore;
 
     private MediaPlayer mp;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        active = true;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        active = false;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -215,10 +228,13 @@ public class QuestionActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
-                //Change to game over screen
-                Intent intent = new Intent(QuestionActivity.this, GameOverActivity.class);
-                startActivity(intent);
+                //Change to game over screen    
+                if(active){
+                    Intent intent = new Intent(QuestionActivity.this, GameOverActivity.class);
+                    startActivity(intent);
+                }
             }
+
 
         }.start();
     }
