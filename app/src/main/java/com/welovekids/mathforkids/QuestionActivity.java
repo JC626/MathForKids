@@ -32,7 +32,7 @@ public class QuestionActivity extends AppCompatActivity {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
         if(pref.getInt("Highscore", 0) < Integer.parseInt(Controller.getCorrect())){
             Controller.setHighScore(Integer.parseInt(Controller.getCorrect()));
-            pref.edit().putInt("Highscore", Integer.parseInt(Controller.getCorrect())).apply();
+            pref.edit().putInt("Highscore", Integer.parseInt(Controller.getCorrect())).commit();
         }
         super.onBackPressed();
     }
