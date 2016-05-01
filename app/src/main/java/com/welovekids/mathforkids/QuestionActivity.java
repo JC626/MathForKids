@@ -26,6 +26,7 @@ public class QuestionActivity extends AppCompatActivity {
     static boolean active = false;
     Question question;
     private Highscore highscore;
+    private CountDownTimer timer;
 
     private MediaPlayer mp;
 
@@ -39,6 +40,8 @@ public class QuestionActivity extends AppCompatActivity {
     public void onStop() {
         super.onStop();
         active = false;
+        timer.cancel();
+        timer = null;
     }
 
     @Override
@@ -218,17 +221,18 @@ public class QuestionActivity extends AppCompatActivity {
         if (!isMuted())
             mp.start();
 
-        final TextView timer = getTimer();
+        final TextView timerText = getTimer();
 
-        new CountDownTimer(60000, 1000) {
+        timer = new CountDownTimer(60000, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                timer.setText("Seconds Left: " + millisUntilFinished / 1000);
+                timerText.setText("Seconds Left: " + millisUntilFinished / 1000);
                 //here you can have your logic to set text to edittext
             }
 
             public void onFinish() {
-                //Change to game over screen    
+                //Change to game over screen
+                timer.cancel();
                 if(active){
                     Intent intent = new Intent(QuestionActivity.this, GameOverActivity.class);
                     startActivity(intent);
