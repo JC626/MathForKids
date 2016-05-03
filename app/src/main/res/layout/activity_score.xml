@@ -7,19 +7,27 @@
     android:background="@drawable/blackboard"
     android:padding="@dimen/activity_vertical_margin"
     tools:context="com.welovekids.mathforkids.Score">
-    <TextView android:id="@+id/totalCorrect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="#fff"
-        android:textSize="50sp"
-        android:paddingBottom="10dp"
-        android:text="HighScore"/>
-    <TextView android:id="@+id/roundScore"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:paddingBottom="10dp"
-    android:textColor="#fff"
-    android:text="HighScore: "/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="1mm"
+        android:layout_gravity="center">
+        <TextView android:id="@+id/totalCorrect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:textSize="50sp"
+            android:paddingBottom="10dp"
+            android:text="HighScore" />
+        <TextView android:id="@+id/roundScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="10sp"
+            android:textColor="#fff"
+            android:text="HighScore: "/>
+    </LinearLayout>
 </LinearLayout>

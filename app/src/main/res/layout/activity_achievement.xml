@@ -12,21 +12,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="20dp">
+        android:paddingBottom="20dp"
+        android:layout_weight="1">
 
         <ImageView
             android:id="@+id/trophy1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".5"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
 
         <ImageView
             android:id="@+id/trophy2"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".5"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
     </LinearLayout>
@@ -35,12 +36,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="1dp">
+        android:paddingBottom="1dp"
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/totalQuestions1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="Highscore: 1" />
@@ -48,7 +50,7 @@
         <TextView
             android:id="@+id/totalQuestions5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="Highscore: 5" />
@@ -57,12 +59,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="1dp">
+        android:paddingBottom="1dp"
+        android:layout_weight="1">
 
         <ImageView
             android:id="@+id/trophy3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
@@ -70,7 +73,7 @@
         <ImageView
             android:id="@+id/trophy4"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
@@ -79,12 +82,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="1dp">
+        android:paddingBottom="1dp"
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/totalQuestions10"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="Highscore: 10" />
@@ -92,7 +96,7 @@
         <TextView
             android:id="@+id/totalQuestions20"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="Highscore: 15" />
@@ -101,12 +105,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="1dp">
+        android:paddingBottom="1dp"
+        android:layout_weight="1">
 
         <ImageView
             android:id="@+id/trophy5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
@@ -114,7 +119,7 @@
         <ImageView
             android:id="@+id/trophy6"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
@@ -123,12 +128,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="1dp">
+        android:paddingBottom="1dp"
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/totalQuestions50"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="Highscore: 20" />
@@ -136,7 +142,7 @@
         <TextView
             android:id="@+id/totalQuestions100"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="Highscore: 30" />
@@ -145,12 +151,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
+        android:layout_weight="1">
 
         <ImageView
             android:id="@+id/trophy7"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
@@ -158,7 +164,7 @@
         <ImageView
             android:id="@+id/trophy8"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
@@ -167,12 +173,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/setIntermediate"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="50 correct questions answered" />
@@ -180,7 +186,7 @@
         <TextView
             android:id="@+id/setAdvanced"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="100 correct questions answered" />
