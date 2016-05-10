@@ -9,10 +9,11 @@
     android:background="#fff"
     tools:context="com.welovekids.mathforkids.QuestionActivity">
 
+    <!--Add timer here-->
     <TextView android:id="@+id/timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello"/>
+        android:text="Timer"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,14 +21,15 @@
         android:orientation="horizontal"
         android:layout_weight="0">
 
-
+        <!--Place the mascot the cat!-->
         <ImageView
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="60dp"
             android:layout_width="150dp"
-            android:layout_height="100dp"
+            android:layout_height="150dp"
             android:src = "@drawable/cat"
             />
 
+        <!--Put speech bubble here-->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -51,7 +53,7 @@
                 android:maxLength="10"
                 android:textSize="18sp"
                 />
-            <!--Set to some image either tick or cross-->
+            <!--Set to some image either tick or cross when user answers a question-->
             <ImageView android:id="@+id/solved"
                 android:layout_gravity="end"
                 android:layout_marginRight = "15dp"
