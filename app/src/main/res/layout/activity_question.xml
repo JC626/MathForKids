@@ -15,29 +15,33 @@
         android:layout_height="wrap_content"
         android:text="Timer"/>
 
+    <!--Top Half of screen-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_weight="0">
+        android:layout_weight="0.5">
 
         <!--Place the mascot the cat!-->
+        <!--Push cat to bottom of top half of screen with marginTop-->
         <ImageView
-            android:layout_marginTop="60dp"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_marginTop="100dp"
+            android:layout_weight="0.4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:src = "@drawable/cat"
             />
 
         <!--Put speech bubble here-->
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="80dp"
             android:background="@drawable/speech"
             >
 
-            <TextView  android:id="@+id/question"
+            <TextView android:id="@+id/question"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="15dp"
                 android:textSize="18sp"
@@ -45,9 +49,9 @@
                 android:layout_width="match_parent"
                 />
             <EditText android:id="@+id/user_answer"
-                android:layout_marginTop="40dp"
+                android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="20dp"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:maxLength="10"
@@ -65,13 +69,13 @@
 
         </FrameLayout>
 
-
     </LinearLayout>
+
     <!--Add Button functionality-->
     <LinearLayout
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_weight="0.5">
         <LinearLayout
