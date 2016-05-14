@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.preference.PreferenceManager;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +26,8 @@ public class SettingsActivity extends AppCompatActivity {
     private Switch intermediate;
     private Switch advanced;
     private Switch mute;
+    private Snackbar errorDifficultyMsg;
+
     MediaPlayer mp;
 
     @SuppressLint("NewApi")
@@ -41,7 +44,7 @@ public class SettingsActivity extends AppCompatActivity {
         mute = (Switch) findViewById(R.id.mute);
         SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(this);
         muted=sp.getBoolean("mute",false);
-
+        errorDifficultyMsg = Snackbar.make(findViewById(R.id.settingsLayout), R.string.difficultyError, Snackbar.LENGTH_SHORT);
 
         //set the switch to OFF
         mute.setChecked(muted);
@@ -67,6 +70,13 @@ public class SettingsActivity extends AppCompatActivity {
                     }
                     Controller.setRange(1);
                 }
+                else{
+                    //Must have at least one of the difficulty settings on!
+                    if(!intermediateB && !advancedB){
+                        basic.setChecked(basicB);
+                        errorDifficultyMsg.show();
+                    }
+                }
 
             }
         });
@@ -87,6 +97,13 @@ public class SettingsActivity extends AppCompatActivity {
                     }
                     Controller.setRange(2);
                 }
+                else{
+                    //Must have at least one of the difficulty settings on!
+                    if(!basicB && !advancedB){
+                        intermediate.setChecked(intermediateB);
+                        errorDifficultyMsg.show();
+                    }
+                }
 
             }
         });
@@ -106,6 +123,13 @@ public class SettingsActivity extends AppCompatActivity {
                         advanced.setChecked(advancedB);
                     }
                     Controller.setRange(3);
+                }
+                else{
+                    //Must have at least one of the difficulty settings on!
+                    if(!basicB && !intermediateB){
+                        advanced.setChecked(advancedB);
+                        errorDifficultyMsg.show();
+                    }
                 }
 
             }
