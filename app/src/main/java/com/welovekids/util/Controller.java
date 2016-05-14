@@ -60,7 +60,7 @@ public class Controller {
      * This means that it would repeatedly ask the same questions n number of times.
      * Once the user answers the type of question n number of times, it will move on
      * to new set of questions.
-     * <p/>
+     *
      * If the user answers incorrectly, the number of correctly answered decreases.
      *
      * @param solution User input
