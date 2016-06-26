@@ -1,12 +1,10 @@
 package com.welovekids.mathforkids;
 
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.welovekids.util.Controller;
-import com.welovekids.util.Highscore;
+import com.welovekids.util.SaveIntegerData;
 
 public class Score extends AppCompatActivity {
 
@@ -14,9 +12,9 @@ public class Score extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
-        Highscore highscore = new Highscore(this);
+        SaveIntegerData highscore = new SaveIntegerData(this,"highscore");
         TextView output = (TextView) findViewById(R.id.roundScore);
-        output.append(String.valueOf(highscore.getHighScore()));
+        output.append(String.valueOf(highscore.getData()));
 
     }
 }

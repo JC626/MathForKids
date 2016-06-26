@@ -1,14 +1,11 @@
 package com.welovekids.mathforkids;
 
-import android.os.SystemClock;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.welovekids.util.Controller;
-import com.welovekids.util.Highscore;
+import com.welovekids.util.SaveIntegerData;
 
 public class AchievementActivity extends AppCompatActivity {
 
@@ -23,60 +20,63 @@ public class AchievementActivity extends AppCompatActivity {
         final ImageView trophy4 = (ImageView) findViewById(R.id.trophy4);
         final ImageView trophy5 = (ImageView) findViewById(R.id.trophy5);
         final ImageView trophy6 = (ImageView) findViewById(R.id.trophy6);
-        final ImageView trophy7 = (ImageView) findViewById(R.id.trophy6);
-        final ImageView trophy8 = (ImageView) findViewById(R.id.trophy6);
+        final ImageView trophy7 = (ImageView) findViewById(R.id.trophy7);
+        final ImageView trophy8 = (ImageView) findViewById(R.id.trophy8);
 
-        Highscore highscore = new Highscore(this);
-        if (highscore.getHighScore() >= 1) {
-            //yellowtrophy for one Q ans
+        SaveIntegerData highscore = new SaveIntegerData(this,"highscore");
+        SaveIntegerData overallCorrect = new SaveIntegerData(this,"overallCorrect");
+        //Highscore trophies
+        if (highscore.getData() >= 10) {
+            //yellowtrophy for 10 Q ans
             trophy1.setImageResource(R.drawable.yellowtrophy);
         }else {
             trophy1.setImageResource(R.drawable.graytrophy);
         }
 
-
-        if (highscore.getHighScore() >= 5) {
-            //yellowtrophy for 5 Q ans
+        if (highscore.getData() >= 20) {
+            //yellowtrophy for 20 Q ans
             trophy2.setImageResource(R.drawable.yellowtrophy);
 
         }else {
             trophy2.setImageResource(R.drawable.graytrophy);
         }
-        if (highscore.getHighScore() >= 10) {
-            //yellowtrophy for 10 Q ans
+        if (highscore.getData() >= 30) {
+            //yellowtrophy for 30 Q ans
             trophy3.setImageResource(R.drawable.yellowtrophy);
         }else {
             trophy3.setImageResource(R.drawable.graytrophy);
         }
 
 
-        if (highscore.getHighScore() >= 15) {
-            //yellowtrophy for 20 Q ans
+        if (highscore.getData() >= 40) {
+            //yellowtrophy for 40 Q ans
             trophy4.setImageResource(R.drawable.yellowtrophy);
         }else {
             trophy4.setImageResource(R.drawable.graytrophy);
         }
-        if (highscore.getHighScore() >= 20) {
+        //Total questions correct trophies
+        int allCorrect = overallCorrect.getData();
+        if (allCorrect >= 50) {
             //yellowtrophy for 50 Q ans
             trophy5.setImageResource(R.drawable.yellowtrophy);
         }else {
             trophy5.setImageResource(R.drawable.graytrophy);
         }
-        if (highscore.getHighScore() >= 30) {
+        if (allCorrect >= 100) {
             //yellowtrophy for 100 Q ans
             trophy6.setImageResource(R.drawable.yellowtrophy);
         }else {
             trophy6.setImageResource(R.drawable.graytrophy);
         }
 
-        if (Integer.parseInt(Controller.getCorrect()) >= 50) {
+        if (allCorrect >=500) {
             //yellowtrophy for 100 Q ans
             trophy7.setImageResource(R.drawable.yellowtrophy);
         }else {
             trophy7.setImageResource(R.drawable.graytrophy);
         }
-        if (Integer.parseInt(Controller.getCorrect()) >= 100) {
-            //yellowtrophy for 100 Q ans
+        if (allCorrect >= 1000) {
+            //yellowtrophy for 1000 Q ans
             trophy8.setImageResource(R.drawable.yellowtrophy);
         }else {
             trophy8.setImageResource(R.drawable.graytrophy);

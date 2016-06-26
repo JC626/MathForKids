@@ -11,7 +11,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,29 +18,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.welovekids.util.Controller;
-import com.welovekids.util.Highscore;
-import com.welovekids.util.Question;
 
 public class QuestionActivity extends AppCompatActivity {
-    static boolean active = false;
-    Question question;
-    private Highscore highscore;
     private CountDownTimer timer;
-
     private MediaPlayer mp;
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        active = true;
-    }
 
     @Override
     public void onStop() {
         super.onStop();
-        active = false;
         timer.cancel();
         timer = null;
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mp != null) {
+            mp.stop();
+            mp = null;
+        }
+        super.onDestroy();
     }
 
     @Override
@@ -50,15 +45,12 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_question);
 
         Controller.resetFields();
-        highscore = new Highscore(this);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        if (question == null) {
-            final TextView questionText = (TextView) findViewById(R.id.question);
-            String questionInput = Controller.askQuestion();  //Get question
-            questionText.setText(questionInput);
-        }
+        final TextView questionText = (TextView) findViewById(R.id.question);
+        String questionInput = Controller.askQuestion();  //Get question
+        questionText.setText(questionInput);
 
         final EditText answer = (EditText) findViewById(R.id.user_answer);
         answer.setKeyListener(null);
@@ -101,11 +93,14 @@ public class QuestionActivity extends AppCompatActivity {
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean ans = Controller.solve(answer.getText().toString());
-                highscore.setHighscore(Integer.parseInt(Controller.getCorrect()));
+                //do nothing if user does not input anything
+                if (answer.getText().toString().equals("")) {
+                    return;
+                }
+                boolean isCorrect = Controller.solve(answer.getText().toString());
                 final ImageView solved = (ImageView) findViewById(R.id.solved);
 
-                if (ans) {
+                if (isCorrect) {
                     solved.setImageResource(R.drawable.right);
                 } else {
                     solved.setImageResource(R.drawable.wrong);
@@ -216,10 +211,13 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        mp = MediaPlayer.create(this, R.raw.schooldays);
-        mp.setLooping(true);
-        if (!isMuted())
-            mp.start();
+        if (!isMuted()) {
+            mp = MediaPlayer.create(this, R.raw.schooldays);
+            if (mp != null) {
+                mp.setLooping(true);
+                mp.start();
+            }
+        }
 
         final TextView timerText = getTimer();
 
@@ -227,16 +225,14 @@ public class QuestionActivity extends AppCompatActivity {
 
             public void onTick(long millisUntilFinished) {
                 timerText.setText("Seconds Left: " + millisUntilFinished / 1000);
-                //here you can have your logic to set text to edittext
+                //here you can have your logic to set text to edit text
             }
 
             public void onFinish() {
                 //Change to game over screen
                 timer.cancel();
-                if(active){
-                    Intent intent = new Intent(QuestionActivity.this, GameOverActivity.class);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(QuestionActivity.this, GameOverActivity.class);
+                startActivity(intent);
             }
 
 
@@ -248,60 +244,46 @@ public class QuestionActivity extends AppCompatActivity {
         return sp.getBoolean("mute", false);
     }
 
-    @Override
-    protected void onDestroy() {
-        mp.stop();
-        mp = null;
-        super.onDestroy();
-    }
 
+    //Getters
     public TextView getTimer() {
         return (TextView) findViewById(R.id.timer);
     }
 
     public Button getButton0() {
         return (Button) findViewById(R.id.Button0);
-
     }
 
     public Button getButton1() {
         return (Button) findViewById(R.id.Button1);
-
     }
 
     public Button getButton2() {
         return (Button) findViewById(R.id.Button2);
-
     }
 
     public Button getButton3() {
         return (Button) findViewById(R.id.Button3);
-
     }
 
     public Button getButton4() {
         return (Button) findViewById(R.id.Button4);
-
     }
 
     public Button getButton5() {
         return (Button) findViewById(R.id.Button5);
-
     }
 
     public Button getButton6() {
         return (Button) findViewById(R.id.Button6);
-
     }
 
     public Button getButton7() {
         return (Button) findViewById(R.id.Button7);
-
     }
 
     public Button getButton8() {
         return (Button) findViewById(R.id.Button8);
-
     }
 
     public Button getButton9() {
@@ -317,20 +299,15 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     public Button getClear() {
-
         return (Button) findViewById(R.id.ButtonClear);
     }
 
     public Button getDot() {
         return (Button) findViewById(R.id.ButtonDot);
-
-
     }
 
     public Button getEnter() {
-
         return (Button) findViewById(R.id.ButtonEnter);
     }
-
 
 }

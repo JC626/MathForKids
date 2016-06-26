@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="20dp"
+        android:paddingBottom="1dp"
         android:layout_weight="1">
 
         <ImageView
@@ -40,20 +40,18 @@
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/totalQuestions1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="Highscore: 1" />
+            android:text="Highscore: 10" />
 
         <TextView
-            android:id="@+id/totalQuestions5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="Highscore: 5" />
+            android:text="Highscore: 20" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -86,20 +84,18 @@
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/totalQuestions10"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="Highscore: 10" />
+            android:text="Highscore: 30" />
 
         <TextView
-            android:id="@+id/totalQuestions20"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="Highscore: 15" />
+            android:text="Highscore: 40" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -132,20 +128,18 @@
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/totalQuestions50"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="Highscore: 20" />
+            android:text="50 correct questions answered" />
 
         <TextView
-            android:id="@+id/totalQuestions100"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="Highscore: 30" />
+            android:text="100 correct questions answered" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -176,19 +170,17 @@
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/setIntermediate"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="50 correct questions answered" />
+            android:text="500 correct questions answered" />
 
         <TextView
-            android:id="@+id/setAdvanced"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:text="100 correct questions answered" />
+            android:text="1000 correct questions answered" />
     </LinearLayout>
 </LinearLayout>
