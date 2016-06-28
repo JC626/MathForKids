@@ -28,11 +28,18 @@ public class Division implements State {
         int digit1 = (int) generateRandomNumber();
         int digit2 = (int) generateRandomNumber();
         char operator = getOperator();
+        //To ensure always dividing by a whole number
         if(digit1 < digit2){
             int temp = digit1;
             digit1 = digit2;
             digit2 = temp;
         }
+        //Don't divide by zero
+        if(digit2 == 0){
+            digit2++;
+        }
+        //Ensure always get a whole number answer
+        digit1 = digit1 * digit2;
         double answer = Controller.getAnswer(digit1, digit2, operator);
         int check = (int)answer;
         double checkAnswer = answer - check;

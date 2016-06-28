@@ -18,7 +18,7 @@ public class AddSubMult implements State {
         int digit2 = (int) generateRandomNumber();
         char operator = getOperator();
         //Switch digits around so don't get integers
-        if(digit1 > digit2 && operator == '-'){
+        if(digit1 < digit2 && operator == '-'){
             int temp = digit1;
             digit1 = digit2;
             digit2 = temp;

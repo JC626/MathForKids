@@ -18,11 +18,17 @@ public class AddSubMultDiv implements State {
         int digit1 = (int) generateRandomNumber();
         int digit2 = (int) generateRandomNumber();
         char operator = getOperator();
-        //Switch digits around so don't get integers
-        if(digit1 < digit2 && operator == '-'){
+        //Switch digits around so don't get integers when subtracting
+        if(digit1 < digit2 && (operator == '-' || operator == '/')){
             int temp = digit1;
             digit1 = digit2;
             digit2 = temp;
+        }
+        if(operator == '/'){
+            //Don't divide by zero
+            if(digit2 == 0) digit2++;
+            //Ensure always get a whole number answer
+            digit1 = digit1 * digit2;
         }
         double answer = Controller.getAnswer(digit1, digit2, operator);
         int check = (int)answer;
