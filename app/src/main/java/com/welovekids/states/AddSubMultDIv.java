@@ -4,6 +4,8 @@ import com.welovekids.util.Controller;
 import com.welovekids.util.Question;
 import com.welovekids.util.QuestionImpl;
 
+import java.util.Locale;
+
 /**
  * Created by dean on 30/04/16.
  */
@@ -11,8 +13,6 @@ public class AddSubMultDiv implements State {
 
     private int correct;
     private int incorrect;
-
-    private String question;
 
     public Question getQuestion() {
         int digit1 = (int) generateRandomNumber();
@@ -31,7 +31,7 @@ public class AddSubMultDiv implements State {
             return new QuestionImpl("" + digit1 + operator + digit2,
                     String.valueOf((int)answer), String.valueOf(operator));
         }
-        return new QuestionImpl("" + digit1 + operator + digit2, String.format("%.2f", answer), String.valueOf(operator));
+        return new QuestionImpl("" + digit1 + operator + digit2, String.format(Locale.getDefault(),"%.2f", answer), String.valueOf(operator));
 
 
     }
@@ -73,6 +73,6 @@ public class AddSubMultDiv implements State {
     }
 
     public double generateRandomNumber() {
-        return (1 * (10* (Controller.range-1)) + Math.random() * (10*Controller.range));
+        return ((10 * (Controller.range - 1)) + Math.random() * (10*Controller.range));
     }
 }

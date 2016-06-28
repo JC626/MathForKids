@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +8,7 @@
     android:background="#fff"
     tools:context="com.welovekids.mathforkids.AchievementActivity">
 
-    <LinearLayout
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -30,9 +30,9 @@
             android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
-    </LinearLayout>
+    </TableRow>
 
-    <LinearLayout
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -43,17 +43,17 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textAlignment="center"
+            android:gravity="center"
             android:text="Highscore: 10" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textAlignment="center"
+            android:gravity="center"
             android:text="Highscore: 20" />
-    </LinearLayout>
-    <LinearLayout
+    </TableRow>
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -75,8 +75,8 @@
             android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
-    </LinearLayout>
-    <LinearLayout
+    </TableRow>
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -87,17 +87,17 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textAlignment="center"
+            android:gravity="center"
             android:text="Highscore: 30" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textAlignment="center"
+            android:gravity="center"
             android:text="Highscore: 40" />
-    </LinearLayout>
-    <LinearLayout
+    </TableRow>
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -119,8 +119,8 @@
             android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
-    </LinearLayout>
-    <LinearLayout
+    </TableRow>
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -131,17 +131,17 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textAlignment="center"
+            android:gravity="center"
             android:text="50 correct questions answered" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textAlignment="center"
+            android:gravity="center"
             android:text="100 correct questions answered" />
-    </LinearLayout>
-    <LinearLayout
+    </TableRow>
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -162,8 +162,8 @@
             android:layout_weight="1"
             android:src="@drawable/graytrophy"
             />
-    </LinearLayout>
-    <LinearLayout
+    </TableRow>
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -173,14 +173,14 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textAlignment="center"
+            android:gravity="center"
             android:text="500 correct questions answered" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textAlignment="center"
+            android:gravity="center"
             android:text="1000 correct questions answered" />
-    </LinearLayout>
-</LinearLayout>
+    </TableRow>
+</TableLayout>

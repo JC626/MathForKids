@@ -1,7 +1,5 @@
 package com.welovekids.states;
 
-import android.util.Log;
-
 import com.welovekids.util.Controller;
 import com.welovekids.util.Question;
 import com.welovekids.util.QuestionImpl;
@@ -14,8 +12,6 @@ public class Sub implements State {
 
     private int correct;
     private int incorrect;
-
-    private String question;
 
     public Question getQuestion() {
         int digit1 = (int) generateRandomNumber();
@@ -59,6 +55,6 @@ public class Sub implements State {
     }
 
     public double generateRandomNumber() {
-        return (1 * (10* (Controller.range-1)) + Math.random() * (10*Controller.range));
+        return ((10 * (Controller.range - 1)) + Math.random() * (10*Controller.range));
     }
 }

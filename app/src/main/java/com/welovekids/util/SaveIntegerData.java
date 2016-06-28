@@ -20,6 +20,6 @@ public class SaveIntegerData {
     }
 
     public void setData(int score) {
-        preferences.edit().putInt(name, score).commit();
+        preferences.edit().putInt(name, score).apply();
     }
 }

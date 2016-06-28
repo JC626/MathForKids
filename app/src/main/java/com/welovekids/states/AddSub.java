@@ -13,8 +13,6 @@ public class AddSub implements State {
     private int correct;
     private int incorrect;
 
-    private String question;
-
     public Question getQuestion() {
         int digit1 = (int) generateRandomNumber();
         int digit2 = (int) generateRandomNumber();
@@ -62,6 +60,6 @@ public class AddSub implements State {
     }
 
     public double generateRandomNumber() {
-        return (1 * (10* (Controller.range-1)) + Math.random() * (10*Controller.range));
+        return ((10 * (Controller.range - 1)) + Math.random() * (10*Controller.range));
     }
 }

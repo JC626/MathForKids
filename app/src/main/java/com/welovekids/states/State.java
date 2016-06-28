@@ -14,24 +14,24 @@ public interface State {
     /**
      *  @return number of times the state has been answered correctly
      */
-    public int getCorrectAnswered();
+    int getCorrectAnswered();
 
     /**
      * @return number of times the state has been answered incorrectly
      */
-    public int getIncorrectlyAnswered();
+    int getIncorrectlyAnswered();
 
     /**
      * @return retrieves a random question
      */
-    public Question getQuestion();
+    Question getQuestion();
 
     /**
      * @param q
      *              a question
      * @return      the answer to the given question
      */
-    public String getAnswer(Question q);
+    String getAnswer(Question q);
 
     /**
      * Generates a random number which is dependent on the range/difficulty
@@ -39,20 +39,20 @@ public interface State {
      *
      * @return random number
      */
-    public double generateRandomNumber();
+    double generateRandomNumber();
 
     /**
      * Sets the number of correct answers made
      * @param correct
      */
-    public void setCorrectAnswered(int correct);
+    void setCorrectAnswered(int correct);
 
     /**
      * Sets the number of incorrect answers made
      * @param incorrect
      */
-    public void setIncorrectlyAnswered(int incorrect);
+    void setIncorrectlyAnswered(int incorrect);
 
     /** This returns the operator related to the state */
-    public char getOperator();
+    char getOperator();
 }

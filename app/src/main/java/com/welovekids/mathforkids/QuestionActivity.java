@@ -246,67 +246,67 @@ public class QuestionActivity extends AppCompatActivity {
 
 
     //Getters
-    public TextView getTimer() {
+    private TextView getTimer() {
         return (TextView) findViewById(R.id.timer);
     }
 
-    public Button getButton0() {
+    private Button getButton0() {
         return (Button) findViewById(R.id.Button0);
     }
 
-    public Button getButton1() {
+    private Button getButton1() {
         return (Button) findViewById(R.id.Button1);
     }
 
-    public Button getButton2() {
+    private Button getButton2() {
         return (Button) findViewById(R.id.Button2);
     }
 
-    public Button getButton3() {
+    private Button getButton3() {
         return (Button) findViewById(R.id.Button3);
     }
 
-    public Button getButton4() {
+    private Button getButton4() {
         return (Button) findViewById(R.id.Button4);
     }
 
-    public Button getButton5() {
+    private Button getButton5() {
         return (Button) findViewById(R.id.Button5);
     }
 
-    public Button getButton6() {
+    private Button getButton6() {
         return (Button) findViewById(R.id.Button6);
     }
 
-    public Button getButton7() {
+    private Button getButton7() {
         return (Button) findViewById(R.id.Button7);
     }
 
-    public Button getButton8() {
+    private Button getButton8() {
         return (Button) findViewById(R.id.Button8);
     }
 
-    public Button getButton9() {
+    private Button getButton9() {
         return (Button) findViewById(R.id.Button9);
     }
 
-    public Button getNegative() {
+    private Button getNegative() {
         return (Button) findViewById(R.id.ButtonNegative);
     }
 
-    public Button getSpace() {
+    private Button getSpace() {
         return (Button) findViewById(R.id.ButtonBackSpace);
     }
 
-    public Button getClear() {
+    private Button getClear() {
         return (Button) findViewById(R.id.ButtonClear);
     }
 
-    public Button getDot() {
+    private Button getDot() {
         return (Button) findViewById(R.id.ButtonDot);
     }
 
-    public Button getEnter() {
+    private Button getEnter() {
         return (Button) findViewById(R.id.ButtonEnter);
     }
 

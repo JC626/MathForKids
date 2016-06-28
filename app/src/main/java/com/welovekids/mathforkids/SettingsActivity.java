@@ -1,18 +1,14 @@
 package com.welovekids.mathforkids;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import com.welovekids.util.Controller;
 
@@ -21,14 +17,10 @@ public class SettingsActivity extends AppCompatActivity {
     private static boolean basicB = true;
     private static boolean intermediateB = false;
     private static boolean advancedB = false;
-    private static boolean muted = false;
     private Switch basic;
     private Switch intermediate;
     private Switch advanced;
-    private Switch mute;
     private Snackbar errorDifficultyMsg;
-
-    MediaPlayer mp;
 
     @SuppressLint("NewApi")
     @Override
@@ -41,9 +33,9 @@ public class SettingsActivity extends AppCompatActivity {
         basic = (Switch) findViewById(R.id.basic);
         intermediate = (Switch) findViewById(R.id.intermediate);
         advanced = (Switch) findViewById(R.id.advanced);
-        mute = (Switch) findViewById(R.id.mute);
+        Switch mute = (Switch) findViewById(R.id.mute);
         SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(this);
-        muted=sp.getBoolean("mute",false);
+        boolean muted = sp.getBoolean("mute", false);
         errorDifficultyMsg = Snackbar.make(findViewById(R.id.settingsLayout), R.string.difficultyError, Snackbar.LENGTH_SHORT);
 
         //set the switch to OFF
@@ -61,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 if (isChecked) {
                     basicB = true;
-                    if (basicB == true) {
+                    if (basicB) {
                         intermediateB = false;
                         advancedB = false;
                         basic.setChecked(basicB);
@@ -88,7 +80,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 if (isChecked) {
                     intermediateB = true;
-                    if (intermediateB == true) {
+                    if (intermediateB) {
                         basicB = false;
                         advancedB = false;
                         basic.setChecked(basicB);
@@ -115,7 +107,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 if (isChecked) {
                     advancedB = true;
-                    if (advancedB == true) {
+                    if (advancedB) {
                         intermediateB = false;
                         basicB = false;
                         basic.setChecked(basicB);
@@ -141,7 +133,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView,
                                          boolean isChecked) {
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(SettingsActivity.this);
-                sp.edit().putBoolean("mute", isChecked).commit();
+                sp.edit().putBoolean("mute", isChecked).apply();
 
             }
         });

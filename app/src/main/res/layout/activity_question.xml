@@ -68,17 +68,18 @@
                 />
 
         </FrameLayout>
-
     </LinearLayout>
+    <!--Add time>
 
-    <!--Add Button functionality-->
-    <LinearLayout
+    <!-Add Button functionality-->
+
+    <TableLayout
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_weight="0.5">
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -105,8 +106,8 @@
                 android:layout_weight="1"
                 android:text="\u232b"/>
 
-        </LinearLayout>
-        <LinearLayout
+        </TableRow>
+        <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -132,8 +133,8 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:text="C"/>
-            </LinearLayout>
-            <LinearLayout
+            </TableRow>
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -159,8 +160,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:text=""/>
-            </LinearLayout>
-            <LinearLayout
+            </TableRow>
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -186,7 +187,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:text="="/>
-            </LinearLayout>
-        </LinearLayout>
+            </TableRow>
+        </TableLayout>
 
 </LinearLayout>

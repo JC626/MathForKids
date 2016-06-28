@@ -10,7 +10,7 @@ import com.welovekids.states.*;
  * Created by chris on 30/04/2016.
  */
 public class Controller {
-    private static State[] QUESTIONS = new State[]
+    private static final State[] QUESTIONS = new State[]
             {new Add(), new Sub(), new AddSub(), new Multiply(),
                     new SubMult(), new Division(), new MultDiv(), new AddSubMult(),
                     new SubMultDiv(), new AddSubMultDiv()};
@@ -20,7 +20,6 @@ public class Controller {
     private static int totalIncorrect = 0;
     private static int totalQuestions = 0;
 
-    public static double max = 9;
     public static int range = 1;
 
     private static State currentState = QUESTIONS[progress];

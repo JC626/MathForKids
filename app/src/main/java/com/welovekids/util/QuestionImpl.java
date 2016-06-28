@@ -8,12 +8,6 @@ public class QuestionImpl implements Question{
     private String answer;
     private String operator;
 
-    public QuestionImpl(){
-        this.question = null;
-        this.answer = null;
-        this.operator = null;
-    }
-
     public QuestionImpl(String question, String answer, String operator){
         this.question = question;
         this.answer = answer;
@@ -21,7 +15,7 @@ public class QuestionImpl implements Question{
     }
 
     /** retrieves the question as a string *
-     * @return
+     * @return the question as a string
      */
     public String getQuestion(){
         if(this.question == null){

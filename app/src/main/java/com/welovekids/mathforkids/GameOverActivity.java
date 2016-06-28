@@ -8,18 +8,16 @@ import com.welovekids.util.Controller;
 import com.welovekids.util.SaveIntegerData;
 
 public class GameOverActivity extends AppCompatActivity {
-    /**
-     * Total correctly answered questions
-     * for all the rounds completed
-     * (Must reach the game over screen
-     * when the timer is 0)
-     */
-    private SaveIntegerData overallCorrect;
-    private SaveIntegerData highscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        overallCorrect = new SaveIntegerData(this,"overallCorrect");
-        highscore = new SaveIntegerData(this,"highscore");
+        /*
+      Total correctly answered questions
+      for all the rounds completed
+      (Must reach the game over screen
+      when the timer is 0)
+     */
+        SaveIntegerData overallCorrect = new SaveIntegerData(this, "overallCorrect");
+        SaveIntegerData highscore = new SaveIntegerData(this, "highscore");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
         TextView totalCorrect = (TextView) findViewById(R.id.roundCorrect);

@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.welovekids.util.Controller;
 import com.welovekids.util.SaveIntegerData;
 
 public class AchievementActivity extends AppCompatActivity {

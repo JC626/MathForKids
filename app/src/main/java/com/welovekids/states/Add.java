@@ -11,7 +11,6 @@ public class Add implements State {
 
     private int correct;
     private int incorrect;
-    private String question;
 
     @Override
     public Question getQuestion() {
@@ -56,6 +55,6 @@ public class Add implements State {
 
     @Override
     public double generateRandomNumber() {
-        return (1 * (10* (Controller.range-1)) + Math.random() * (10*Controller.range));
+        return ((10 * (Controller.range - 1)) + Math.random() * (10*Controller.range));
     }
 }

@@ -4,6 +4,8 @@ import com.welovekids.util.Controller;
 import com.welovekids.util.Question;
 import com.welovekids.util.QuestionImpl;
 
+import java.util.Locale;
+
 /**
  * Created by chris on 30/04/2016.
  */
@@ -39,7 +41,7 @@ public class Division implements State {
                     String.valueOf((int)answer), String.valueOf(operator));
         }
         return new QuestionImpl("" + digit1 + operator + digit2,
-                String.format("%.2f", answer), String.valueOf(operator));
+                String.format(Locale.getDefault(),"%.2f", answer), String.valueOf(operator));
     }
 
     @Override
@@ -49,7 +51,7 @@ public class Division implements State {
 
     @Override
     public double generateRandomNumber() {
-        return (1 * (10* (Controller.range-1)) + Math.random() * (10*Controller.range));
+        return ((10 * (Controller.range - 1)) + Math.random() * (10*Controller.range));
     }
 
     @Override
