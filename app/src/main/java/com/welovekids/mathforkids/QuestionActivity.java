@@ -233,6 +233,7 @@ public class QuestionActivity extends AppCompatActivity {
                 timer.cancel();
                 Intent intent = new Intent(QuestionActivity.this, GameOverActivity.class);
                 startActivity(intent);
+                finish();
             }
 
 

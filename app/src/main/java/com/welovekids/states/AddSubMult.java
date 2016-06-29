@@ -7,12 +7,7 @@ import com.welovekids.util.QuestionImpl;
 /**
  * Created by dean on 30/04/16.
  */
-public class AddSubMult implements State {
-
-
-    private int correct;
-    private int incorrect;
-
+public class AddSubMult extends AbstractState {
     public Question getQuestion() {
         int digit1 = (int) generateRandomNumber();
         int digit2 = (int) generateRandomNumber();
@@ -25,12 +20,6 @@ public class AddSubMult implements State {
         }
         int answer = (int)Controller.getAnswer(digit1, digit2, operator);
         return new QuestionImpl("" + digit1 + operator + digit2, String.valueOf(answer), String.valueOf(operator));
-
-
-    }
-
-    public int getCorrectAnswered() {
-        return correct;
     }
 
     @Override
@@ -46,25 +35,5 @@ public class AddSubMult implements State {
 
         }
         return ' ';
-    }
-
-    public int getIncorrectlyAnswered() {
-        return incorrect;
-    }
-
-    public String getAnswer(Question g) {
-        return g.getAnswer();
-    }
-
-    public void setCorrectAnswered(int correct) {
-        this.correct = correct;
-    }
-
-    public void setIncorrectlyAnswered(int incorrect) {
-        this.incorrect = incorrect;
-    }
-
-    public double generateRandomNumber() {
-        return ((10 * (Controller.range - 1)) + Math.random() * (10*Controller.range));
     }
 }

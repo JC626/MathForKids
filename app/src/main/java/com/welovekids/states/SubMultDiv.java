@@ -9,20 +9,7 @@ import java.util.Locale;
 /**
  * Created by chris on 30/04/2016.
  */
-public class SubMultDiv implements State {
-    private int correct = 0;
-    private int incorrect = 0;
-
-    @Override
-    public int getCorrectAnswered() {
-        return correct;
-    }
-
-    @Override
-    public int getIncorrectlyAnswered() {
-        return incorrect;
-    }
-
+public class SubMultDiv extends AbstractState {
     @Override
     public Question getQuestion() {
         int digit1 = (int) generateRandomNumber();
@@ -49,26 +36,6 @@ public class SubMultDiv implements State {
         }
         return new QuestionImpl("" + digit1 + operator + digit2,
                 String.format(Locale.getDefault(),"%.2f", answer), String.valueOf(operator));
-    }
-
-    @Override
-    public String getAnswer(Question q) {
-        return q.getAnswer();
-    }
-
-    @Override
-    public double generateRandomNumber() {
-        return ((10 * (Controller.range - 1)) + Math.random() * (10*Controller.range));
-    }
-
-    @Override
-    public void setCorrectAnswered(int correct) {
-        this.correct = correct;
-    }
-
-    @Override
-    public void setIncorrectlyAnswered(int incorrect) {
-        this.incorrect = incorrect;
     }
 
     @Override
