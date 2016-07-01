@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/activity_vertical_margin"
     android:background="#fff"
+    android:weightSum="9"
     tools:context="com.welovekids.mathforkids.QuestionActivity">
 
     <!--Add timer here-->
@@ -16,27 +17,29 @@
         android:text="Timer"/>
 
     <!--Top Half of screen-->
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TableRow
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="0.5">
-
+        android:layout_weight="5">
         <!--Place the mascot the cat!-->
-        <!--Push cat to bottom of top half of screen with marginTop-->
+        <!--Push cat to bottom of half of screen using gravity-->
         <ImageView
-            android:layout_marginTop="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
             android:layout_weight="0.4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src = "@drawable/cat"
+            android:adjustViewBounds="true"
+            android:src="@drawable/cat"
             />
 
-        <!--Put speech bubble here-->
+        <!--Put speech bubble here. Use scaleType to scale speech bubble to width size-->
         <FrameLayout
             android:layout_weight="0.6"
+            android:adjustViewBounds="true"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
             android:layout_marginBottom="80dp"
             android:background="@drawable/speech"
             >
@@ -68,126 +71,115 @@
                 />
 
         </FrameLayout>
-    </LinearLayout>
-    <!--Add time>
-
-    <!-Add Button functionality-->
-
-    <TableLayout
-        android:layout_gravity="bottom"
+    </TableRow>
+    <!--Add Button functionality-->
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="0.5">
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <!--Row one-->
-            <Button  android:id="@+id/Button1"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="1"/>
-            <Button android:id="@+id/Button2"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="2"/>
-            <Button android:id="@+id/Button3"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="3"/>
-            <Button android:id="@+id/ButtonBackSpace"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="\u232b"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <!--Row one-->
+        <Button  android:id="@+id/Button1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="1"/>
+        <Button android:id="@+id/Button2"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="2"/>
+        <Button android:id="@+id/Button3"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="3"/>
+        <Button android:id="@+id/ButtonBackSpace"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="\u232b"/>
 
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <!--Row two-->
-            <Button android:id="@+id/Button4"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="4"/>
-            <Button android:id="@+id/Button5"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="5"/>
-            <Button android:id="@+id/Button6"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="6"/>
-            <Button android:id="@+id/ButtonClear"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="C"/>
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-                <!--Row three-->
-                <Button android:id="@+id/Button7"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="7"/>
-                <Button android:id="@+id/Button8"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="8"/>
-                <Button android:id="@+id/Button9"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="9"/>
-                <Button
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text=""/>
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-                <!--Row four-->
-                <Button android:id="@+id/Button0"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="0"/>
-                <Button android:id="@+id/ButtonDot"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="."/>
-                <Button android:id="@+id/ButtonNegative"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="-"/>
-                <Button android:id="@+id/ButtonEnter"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="="/>
-            </TableRow>
-        </TableLayout>
-
-</LinearLayout>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <!--Row two-->
+        <Button android:id="@+id/Button4"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="4"/>
+        <Button android:id="@+id/Button5"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="5"/>
+        <Button android:id="@+id/Button6"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="6"/>
+        <Button android:id="@+id/ButtonClear"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="C"/>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <!--Row three-->
+        <Button android:id="@+id/Button7"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="7"/>
+        <Button android:id="@+id/Button8"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="8"/>
+        <Button android:id="@+id/Button9"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="9"/>
+        <Button
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text=""/>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <!--Row four-->
+        <Button android:id="@+id/Button0"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="0"/>
+        <Button android:id="@+id/ButtonDot"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="."/>
+        <Button android:id="@+id/ButtonNegative"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="-"/>
+        <Button android:id="@+id/ButtonEnter"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="="/>
+    </TableRow>
+</TableLayout>
