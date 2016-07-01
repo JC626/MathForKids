@@ -34,7 +34,7 @@ public interface State {
     String getAnswer(Question q);
 
     /**
-     * Generates a random number which is dependent on the range/difficulty
+     * Generates a random number which is dependent on the difficulty/difficulty
      * selected by the user.
      *
      * @return random number

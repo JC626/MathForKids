@@ -20,7 +20,7 @@ public class Controller {
     private static int totalIncorrect = 0;
     private static int totalQuestions = 0;
 
-    public static int range = 1;
+    public static int difficulty = 1;
 
     private static State currentState = QUESTIONS[progress];
     private static Question currentQuestion = currentState.getQuestion();
@@ -32,8 +32,8 @@ public class Controller {
         totalQuestions = 0;
     }
 
-    public static void setRange(int range) {
-        Controller.range = range;
+    public static void setDifficulty(int difficulty) {
+        Controller.difficulty = difficulty;
     }
 
     public static int getTotalQuestions() {

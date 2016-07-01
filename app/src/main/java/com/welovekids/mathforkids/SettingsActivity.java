@@ -60,7 +60,7 @@ public class SettingsActivity extends AppCompatActivity {
                         intermediate.setChecked(intermediateB);
                         advanced.setChecked(advancedB);
                     }
-                    Controller.setRange(1);
+                    Controller.setDifficulty(1);
                 }
                 else{
                     //Must have at least one of the difficulty settings on!
@@ -87,7 +87,7 @@ public class SettingsActivity extends AppCompatActivity {
                         intermediate.setChecked(intermediateB);
                         advanced.setChecked(advancedB);
                     }
-                    Controller.setRange(2);
+                    Controller.setDifficulty(2);
                 }
                 else{
                     //Must have at least one of the difficulty settings on!
@@ -114,7 +114,7 @@ public class SettingsActivity extends AppCompatActivity {
                         intermediate.setChecked(intermediateB);
                         advanced.setChecked(advancedB);
                     }
-                    Controller.setRange(3);
+                    Controller.setDifficulty(3);
                 }
                 else{
                     //Must have at least one of the difficulty settings on!
