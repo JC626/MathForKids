@@ -28,12 +28,18 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         timer.cancel();
+        if(mp != null){
+            mp.pause();
+        }
         timer = null;
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        if(mp != null){
+            mp.start();
+        }
         final TextView timerText = getTimer();
         //Resume gameplay after a popup has disappeared (i.e. screen is still partially visible)
         timer = new CountDownTimer(remainingTime,1000) {
@@ -54,20 +60,15 @@ public class QuestionActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+        if (mp != null) {
+            mp.stop();
+            mp = null;
+        }
         /*
          *If user exits the question screen while app is still running
          * go back to the main menu
          */
         finish();
-    }
-
-    @Override
-    protected void onDestroy() {
-        if (mp != null) {
-            mp.stop();
-            mp = null;
-        }
-        super.onDestroy();
     }
 
     @Override
@@ -100,7 +101,6 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-
         Button clear = getClear();
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,7 +109,6 @@ public class QuestionActivity extends AppCompatActivity {
 
             }
         });
-
 
         Button enter = getEnter();
         enter.setOnClickListener(new View.OnClickListener() {
@@ -249,26 +248,6 @@ public class QuestionActivity extends AppCompatActivity {
                 mp.start();
             }
         }
-/*
-        final TextView timerText = getTimer();
-
-        timer = new CountDownTimer(60000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                remainingTime = millisUntilFinished;
-                timerText.setText("Seconds Left: " + millisUntilFinished / 1000);
-            }
-
-            public void onFinish() {
-                //Change to game over screen
-                timer.cancel();
-                Intent intent = new Intent(QuestionActivity.this, GameOverActivity.class);
-                startActivity(intent);
-                finish();
-            }
-
-
-        }.start();*/
     }
 
     private boolean isMuted() {
