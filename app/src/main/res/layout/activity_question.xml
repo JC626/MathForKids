@@ -171,16 +171,18 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="0"/>
+        <!--Add android:text="." to this button when decimals are implemented-->
         <Button android:id="@+id/ButtonDot"
             android:layout_height="match_parent"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="."/>
+            />
+        <!--Add android:text="-" to this button when integers are implemented-->
         <Button android:id="@+id/ButtonNegative"
             android:layout_height="match_parent"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="-"/>
+            />
         <Button android:id="@+id/ButtonEnter"
             android:layout_height="match_parent"
             android:layout_width="0dp"

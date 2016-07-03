@@ -101,15 +101,6 @@ public class QuestionActivity extends AppCompatActivity {
         });
 
 
-        Button dot = getDot();
-        dot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String c = ".";
-                answer.append(c);
-            }
-        });
-
         Button clear = getClear();
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,6 +141,15 @@ public class QuestionActivity extends AppCompatActivity {
 
             }
         });
+        //Remove these buttons until decimals and/or integers are implemented
+        /*Button dot = getDot();
+        dot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String c = ".";
+                answer.append(c);
+            }
+        });
 
         Button negative = getNegative();
         negative.setOnClickListener(new View.OnClickListener() {
@@ -157,7 +157,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 answer.append("-");
             }
-        });
+        });*/
 
         Button b0 = getButton0();
         b0.setOnClickListener(new View.OnClickListener() {
@@ -322,9 +322,10 @@ public class QuestionActivity extends AppCompatActivity {
         return (Button) findViewById(R.id.Button9);
     }
 
-    private Button getNegative() {
+    //Remove until integers are added
+    /*private Button getNegative() {
         return (Button) findViewById(R.id.ButtonNegative);
-    }
+    }*/
 
     private Button getSpace() {
         return (Button) findViewById(R.id.ButtonBackSpace);
@@ -334,9 +335,10 @@ public class QuestionActivity extends AppCompatActivity {
         return (Button) findViewById(R.id.ButtonClear);
     }
 
-    private Button getDot() {
+    //Remove until decimals are implemented
+    /*private Button getDot() {
         return (Button) findViewById(R.id.ButtonDot);
-    }
+    }*/
 
     private Button getEnter() {
         return (Button) findViewById(R.id.ButtonEnter);
