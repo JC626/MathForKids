@@ -21,13 +21,44 @@ import com.welovekids.util.Controller;
 
 public class QuestionActivity extends AppCompatActivity {
     private CountDownTimer timer;
+    private long remainingTime = 60000; //Start at 60 seconds
     private MediaPlayer mp;
 
     @Override
-    public void onStop() {
-        super.onStop();
+    protected void onPause() {
+        super.onPause();
         timer.cancel();
         timer = null;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        final TextView timerText = getTimer();
+        //Resume gameplay after a popup has disappeared (i.e. screen is still partially visible)
+        timer = new CountDownTimer(remainingTime,1000) {
+            public void onTick(long millisUntilFinished) {
+                remainingTime = millisUntilFinished;
+                timerText.setText("Seconds Left: " + millisUntilFinished / 1000);
+            }
+            public void onFinish() {
+                //Change to game over screen
+                timer.cancel();
+                Intent intent = new Intent(QuestionActivity.this, GameOverActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }.start();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        /*
+         *If user exits the question screen while app is still running
+         * go back to the main menu
+         */
+        finish();
     }
 
     @Override
@@ -218,14 +249,14 @@ public class QuestionActivity extends AppCompatActivity {
                 mp.start();
             }
         }
-
+/*
         final TextView timerText = getTimer();
 
         timer = new CountDownTimer(60000, 1000) {
 
             public void onTick(long millisUntilFinished) {
+                remainingTime = millisUntilFinished;
                 timerText.setText("Seconds Left: " + millisUntilFinished / 1000);
-                //here you can have your logic to set text to edit text
             }
 
             public void onFinish() {
@@ -237,7 +268,7 @@ public class QuestionActivity extends AppCompatActivity {
             }
 
 
-        }.start();
+        }.start();*/
     }
 
     private boolean isMuted() {
