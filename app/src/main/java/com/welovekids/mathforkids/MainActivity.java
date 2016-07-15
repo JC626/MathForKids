@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button acheive = (Button) findViewById(R.id.acheive);
+        Button acheive = (Button) findViewById(R.id.achieve);
         acheive.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
@@ -48,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button about = (Button) findViewById(R.id.about);
+        about.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AboutActivity.class);
                 startActivity(intent);
             }
         });
