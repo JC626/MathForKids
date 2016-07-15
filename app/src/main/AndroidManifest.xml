@@ -3,7 +3,7 @@
     package="com.welovekids.mathforkids">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -23,48 +23,39 @@
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+
         </activity>
         <activity
             android:name=".SettingsActivity"
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+
         </activity>
         <activity
             android:name=".Score"
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+
         </activity>
         <activity
             android:name=".AchievementActivity"
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+
         </activity>
         <activity android:name=".GameOverActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+
         </activity>
         <activity
             android:name=".AboutActivity"
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"
-            ></activity>
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

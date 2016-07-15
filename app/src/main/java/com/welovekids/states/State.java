@@ -43,13 +43,13 @@ public interface State {
 
     /**
      * Sets the number of correct answers made
-     * @param correct
+     * @param correct - Number of correct answers
      */
     void setCorrectAnswered(int correct);
 
     /**
      * Sets the number of incorrect answers made
-     * @param incorrect
+     * @param incorrect - Number of incorrect answers
      */
     void setIncorrectlyAnswered(int incorrect);
 

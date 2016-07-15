@@ -21,9 +21,8 @@ public class AboutActivity extends AppCompatActivity {
         Resources res = getResources();
         //Put the version number into the about page
         final TextView versionText = (TextView) findViewById(R.id.version);
-        PackageInfo pInfo = null;
         try {
-            pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
             String version = pInfo.versionName;
             versionText.setText(res.getString(R.string.versionNumber,version));
         } catch (PackageManager.NameNotFoundException e) {

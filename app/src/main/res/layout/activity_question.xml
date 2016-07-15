@@ -46,6 +46,7 @@
             <TextView android:id="@+id/question"
                 android:gravity="top|center"
                 android:paddingRight="10dp"
+                android:paddingEnd="10dp"
                 android:layout_marginTop="20dp"
                 android:text="TEST"
                 android:textSize="18sp"

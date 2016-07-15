@@ -45,7 +45,8 @@ public class QuestionActivity extends AppCompatActivity {
         timer = new CountDownTimer(remainingTime,1000) {
             public void onTick(long millisUntilFinished) {
                 remainingTime = millisUntilFinished;
-                timerText.setText("Seconds Left: " + millisUntilFinished / 1000);
+                String time = "Seconds Left: " + millisUntilFinished / 1000;
+                timerText.setText(time);
             }
             public void onFinish() {
                 //Change to game over screen

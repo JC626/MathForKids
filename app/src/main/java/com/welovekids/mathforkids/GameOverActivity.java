@@ -25,7 +25,8 @@ public class GameOverActivity extends AppCompatActivity {
         if(correct > highscore.getData()){
             highscore.setData(correct);
             TextView newScore = (TextView) findViewById(R.id.newHighscore);
-            newScore.setText("You have a new highscore of " + Controller.getCorrect());
+            String newScoreText = "You have a new highscore of " + Controller.getCorrect();
+            newScore.setText(newScoreText);
         }
         overallCorrect.setData(correct + overallCorrect.getData());
         totalCorrect.append(Controller.getCorrect());
