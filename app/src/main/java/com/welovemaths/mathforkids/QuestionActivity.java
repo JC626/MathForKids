@@ -1,4 +1,4 @@
-package com.welovekids.mathforkids;
+package com.welovemaths.mathforkids;
 
 
 import android.content.Intent;
@@ -17,10 +17,19 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.welovekids.util.Controller;
+import com.welovekids.mathforkids.R;
+import com.welovemaths.util.Controller;
 
+/**
+ * @author Created by Janice
+ * Shows the screen that users use
+ * to answer mathematic questions
+ */
 public class QuestionActivity extends AppCompatActivity {
     private CountDownTimer timer;
+    /**Amount of time to show the tick or cross after answering a question */
+    private static int ANSWER_TIME = 750;
+    private static int COUNT_DOWN_INTERVAL = 1000;
     private long remainingTime = 60000; //Start at 60 seconds
     private MediaPlayer mp;
 
@@ -42,7 +51,7 @@ public class QuestionActivity extends AppCompatActivity {
         }
         final TextView timerText = getTimer();
         //Resume gameplay after a popup has disappeared (i.e. screen is still partially visible)
-        timer = new CountDownTimer(remainingTime,1000) {
+        timer = new CountDownTimer(remainingTime,COUNT_DOWN_INTERVAL) {
             public void onTick(long millisUntilFinished) {
                 remainingTime = millisUntilFinished;
                 String time = "Seconds Left: " + millisUntilFinished / 1000;
@@ -96,7 +105,7 @@ public class QuestionActivity extends AppCompatActivity {
                 if (text.length() == 0) {
                     return;
                 }
-
+                //Remove last character by splitting the string
                 CharSequence backspaced = text.subSequence(0, text.length() - 1);
                 answer.setText(backspaced);
             }
@@ -127,13 +136,14 @@ public class QuestionActivity extends AppCompatActivity {
                 } else {
                     solved.setImageResource(R.drawable.wrong);
                 }
+                //Only display the view for
                 solved.setVisibility(View.VISIBLE);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         solved.setVisibility(View.GONE);
                     }
-                }, 750);
+                }, ANSWER_TIME);
                 final TextView questionText = (TextView) findViewById(R.id.question);
                 String questionInput = Controller.askQuestion();  //Get question
                 questionText.setText(questionInput);
@@ -158,6 +168,8 @@ public class QuestionActivity extends AppCompatActivity {
                 answer.append("-");
             }
         });*/
+
+        //Number buttons
 
         Button b0 = getButton0();
         b0.setOnClickListener(new View.OnClickListener() {
@@ -251,11 +263,11 @@ public class QuestionActivity extends AppCompatActivity {
         }
     }
 
+
     private boolean isMuted() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         return sp.getBoolean("mute", false);
     }
-
 
     //Getters
     private TextView getTimer() {

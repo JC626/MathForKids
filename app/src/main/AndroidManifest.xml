@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.welovemaths.mathforkids.MainActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -19,40 +19,40 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".QuestionActivity"
+            android:name="com.welovemaths.mathforkids.QuestionActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.welovemaths.mathforkids.MainActivity"
             android:screenOrientation="portrait">
 
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name="com.welovemaths.mathforkids.SettingsActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.welovemaths.mathforkids.MainActivity"
             android:screenOrientation="portrait">
 
         </activity>
         <activity
-            android:name=".Score"
+            android:name="com.welovemaths.mathforkids.ScoreActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.welovemaths.mathforkids.MainActivity"
             android:screenOrientation="portrait">
 
         </activity>
         <activity
-            android:name=".AchievementActivity"
+            android:name="com.welovemaths.mathforkids.AchievementActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.welovemaths.mathforkids.MainActivity"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".GameOverActivity">
+        <activity android:name="com.welovemaths.mathforkids.GameOverActivity">
 
         </activity>
         <activity
-            android:name=".AboutActivity"
+            android:name="com.welovemaths.mathforkids.AboutActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.welovemaths.mathforkids.MainActivity"
             android:screenOrientation="portrait">
 
         </activity>

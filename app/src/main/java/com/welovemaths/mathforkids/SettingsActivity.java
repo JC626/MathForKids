@@ -1,4 +1,4 @@
-package com.welovekids.mathforkids;
+package com.welovemaths.mathforkids;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
@@ -10,8 +10,14 @@ import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
-import com.welovekids.util.Controller;
+import com.welovekids.mathforkids.R;
+import com.welovemaths.util.Controller;
 
+/**
+ * @author Created by Megan
+ * Show Settings for selecting difficulty
+ * and muting the sound
+ */
 public class SettingsActivity extends AppCompatActivity {
 
     private static boolean basicB = true;

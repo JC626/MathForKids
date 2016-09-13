@@ -2,9 +2,19 @@
  * Date             Author          Changes
  * 30 Mar 16        Chris Rabe      added documentation
  */
-package com.welovekids.util;
+package com.welovemaths.util;
 
-import com.welovekids.states.*;
+import com.welovemaths.states.Add;
+import com.welovemaths.states.AddSub;
+import com.welovemaths.states.AddSubMult;
+import com.welovemaths.states.AddSubMultDiv;
+import com.welovemaths.states.Division;
+import com.welovemaths.states.MultDiv;
+import com.welovemaths.states.Multiply;
+import com.welovemaths.states.State;
+import com.welovemaths.states.Sub;
+import com.welovemaths.states.SubMult;
+import com.welovemaths.states.SubMultDiv;
 
 /**
  * Created by chris on 30/04/2016.

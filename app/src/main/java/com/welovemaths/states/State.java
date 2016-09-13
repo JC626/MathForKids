@@ -3,9 +3,9 @@
  * 30 Mar 16    Chris Rabe      added javadoc comments
  */
 
-package com.welovekids.states;
+package com.welovemaths.states;
 
-import com.welovekids.util.Question;
+import com.welovemaths.util.Question;
 
 /**
  * Created by chris on 30/04/2016.

@@ -1,4 +1,4 @@
-package com.welovekids.mathforkids;
+package com.welovemaths.mathforkids;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -8,6 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.welovekids.mathforkids.R;
+
+/**
+ * @author Created by Janice
+ * Shows information about the application version
+ * and the developers
+ */
 public class AboutActivity extends AppCompatActivity {
 
     @Override

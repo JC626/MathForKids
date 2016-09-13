@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@drawable/blackboard"
     android:padding="@dimen/activity_vertical_margin"
-    tools:context="com.welovekids.mathforkids.GameOverActivity">
+    tools:context="com.welovemaths.mathforkids.GameOverActivity">
 
         <TextView android:id="@+id/totalCorrect"
             android:layout_width="wrap_content"

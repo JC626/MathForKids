@@ -1,12 +1,16 @@
-package com.welovekids.mathforkids;
+package com.welovemaths.mathforkids;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.welovekids.util.SaveIntegerData;
+import com.welovekids.mathforkids.R;
+import com.welovemaths.util.SaveIntegerData;
 
-public class Score extends AppCompatActivity {
+/**
+ * Created by Janice
+ */
+public class ScoreActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,4 +1,4 @@
-package com.welovekids.mathforkids;
+package com.welovemaths.mathforkids;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.welovekids.mathforkids.R;
+
+/**
+ * @author Created by Megan
+ * Main Menu of the window
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -20,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         score.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Score.class);
+                Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
                 startActivity(intent);
             }
         });

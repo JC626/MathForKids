@@ -1,4 +1,4 @@
-package com.welovekids.util;
+package com.welovemaths.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

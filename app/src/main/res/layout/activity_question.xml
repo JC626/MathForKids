@@ -8,7 +8,7 @@
     android:padding="@dimen/activity_vertical_margin"
     android:background="#fff"
     android:weightSum="9"
-    tools:context="com.welovekids.mathforkids.QuestionActivity">
+    tools:context="com.welovemaths.mathforkids.QuestionActivity">
 
     <!--Add timer here-->
     <TextView android:id="@+id/timer"

@@ -7,7 +7,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
-    tools:context=".SettingsActivity"
+    tools:context="com.welovemaths.mathforkids.SettingsActivity"
     android:padding="5dp">
 
     <Switch

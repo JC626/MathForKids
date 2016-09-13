@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:background="#fff"
-    tools:context="com.welovekids.mathforkids.AchievementActivity">
+    tools:context="com.welovemaths.mathforkids.AchievementActivity">
 
     <TableRow
         android:layout_width="match_parent"

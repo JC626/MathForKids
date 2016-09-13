@@ -1,7 +1,7 @@
-package com.welovekids.states;
+package com.welovemaths.states;
 
-import com.welovekids.util.Controller;
-import com.welovekids.util.Question;
+import com.welovemaths.util.Controller;
+import com.welovemaths.util.Question;
 
 /**
  * Created by Janice on 29/06/2016.

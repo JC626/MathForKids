@@ -1,19 +1,19 @@
-package com.welovekids.states;
+package com.welovemaths.states;
 
-import com.welovekids.util.Controller;
-import com.welovekids.util.Question;
-import com.welovekids.util.QuestionImpl;
+import com.welovemaths.util.Controller;
+import com.welovemaths.util.Question;
+import com.welovemaths.util.QuestionImpl;
 
 /**
  * Created by dean on 30/04/16.
  */
-public class AddSubMult extends AbstractState {
+public class Sub extends AbstractState {
     public Question getQuestion() {
         int digit1 = (int) generateRandomNumber();
         int digit2 = (int) generateRandomNumber();
         char operator = getOperator();
         //Switch digits around so don't get integers
-        if(digit1 < digit2 && operator == '-'){
+        if(digit1 < digit2){
             int temp = digit1;
             digit1 = digit2;
             digit2 = temp;
@@ -24,16 +24,6 @@ public class AddSubMult extends AbstractState {
 
     @Override
     public char getOperator() {
-        int val = (int) Math.random() * 3;
-        switch (val) {
-            case 0:
-                return '+';
-            case 1:
-                return '-';
-            case 2:
-                return 'x';
-
-        }
-        return ' ';
+        return '-';
     }
 }

@@ -1,11 +1,16 @@
-package com.welovekids.mathforkids;
+package com.welovemaths.mathforkids;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.welovekids.util.SaveIntegerData;
+import com.welovekids.mathforkids.R;
+import com.welovemaths.util.SaveIntegerData;
 
+/**
+ * @author Created by Megan
+ * Displays achievements the user has achieved
+ */
 public class AchievementActivity extends AppCompatActivity {
 
     @Override
